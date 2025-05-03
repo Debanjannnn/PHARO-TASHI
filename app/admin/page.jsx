@@ -167,7 +167,7 @@ const AdminDashboard = () => {
           rewardTokenSymbol,
           totalStaked: ethers.formatEther(totalStakedBN),
           APY: APY.toString(),
-          lockDays: lockDays.toString(),
+          // lockDays: lockDays.toString(),
           // Use totalRewards from poolInfo instead of token balance
           availableRewards: (ethers.formatEther(totalRewardsBN)),
         })

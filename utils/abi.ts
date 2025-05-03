@@ -63,12 +63,6 @@ const abi = {
 						"internalType": "uint256",
 						"name": "reward",
 						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "fee",
-						"type": "uint256"
 					}
 				],
 				"name": "Claimed",
@@ -97,37 +91,6 @@ const abi = {
 					}
 				],
 				"name": "Deposited",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "user",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "uint256",
-						"name": "pid",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "penalty",
-						"type": "uint256"
-					}
-				],
-				"name": "EmergencyWithdrawn",
 				"type": "event"
 			},
 			{
@@ -204,31 +167,6 @@ const abi = {
 				"inputs": [
 					{
 						"indexed": true,
-						"internalType": "uint256",
-						"name": "pid",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "depositor",
-						"type": "address"
-					}
-				],
-				"name": "RewardDeposited",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
 						"internalType": "address",
 						"name": "user",
 						"type": "address"
@@ -243,12 +181,6 @@ const abi = {
 						"indexed": false,
 						"internalType": "uint256",
 						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "fee",
 						"type": "uint256"
 					}
 				],
@@ -270,46 +202,7 @@ const abi = {
 			},
 			{
 				"inputs": [],
-				"name": "EMERGENCY_PENALTY",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "FEE_PERCENT",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "MAX_MULTIPLIER",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "TEST_DAY",
+				"name": "TEST_LOCK_PERIOD",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -372,9 +265,14 @@ const abi = {
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
 					}
 				],
-				"name": "deposit",
+				"name": "createNotification",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -392,20 +290,7 @@ const abi = {
 						"type": "uint256"
 					}
 				],
-				"name": "depositRewards",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_pid",
-						"type": "uint256"
-					}
-				],
-				"name": "emergencyWithdraw",
+				"name": "deposit",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -442,12 +327,30 @@ const abi = {
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct CoroTashi.Notification[]",
+						"internalType": "struct CoroYami.Notification[]",
 						"name": "",
 						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newAPY",
+						"type": "uint256"
+					}
+				],
+				"name": "modifyPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -566,11 +469,6 @@ const abi = {
 					},
 					{
 						"internalType": "uint256",
-						"name": "totalRewards",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "APY",
 						"type": "uint256"
 					},
@@ -586,6 +484,29 @@ const abi = {
 			{
 				"inputs": [],
 				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "swap",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -701,7 +622,7 @@ const abi = {
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/CoroYami/StakingDapp.sol": "CoroTashi"
+			"contracts/PharoTashi.sol": "CoroYami"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -709,7 +630,7 @@ const abi = {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -764,11 +685,11 @@ const abi = {
 			]
 		},
 		"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
-			"keccak256": "0x4ea01544758fd2c7045961904686bfe232d2220a04ecaa2d6b08dac17827febf",
+			"keccak256": "0x982c5cb790ab941d1e04f807120a71709d4c313ba0bfc16006447ffbd27fbbd5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fabe6bef5167ae741dd8c22d7f81d3f9120bd61b290762a2e8f176712567d329",
-				"dweb:/ipfs/QmSnEitJ6xmf1SSAUeZozD7Gx7h8bNnX3a1ZBzqeivsvVg"
+				"bzz-raw://8150ceb4ac947e8a442b2a9c017e01e880b2be2dd958f1fa9bc405f4c5a86508",
+				"dweb:/ipfs/QmbcBmFX66AY6Kbhnd5gx7zpkgqnUafo43XnmayAM7zVdB"
 			]
 		},
 		"@openzeppelin/contracts/utils/Context.sol": {
@@ -787,12 +708,12 @@ const abi = {
 				"dweb:/ipfs/QmfDRc7pxfaXB2Dh9np5Uf29Na3pQ7tafRS684wd3GLjVL"
 			]
 		},
-		"contracts/CoroYami/StakingDapp.sol": {
-			"keccak256": "0xe6c76e7b698cab1e084529889652169de6556ffd397c32ab98af6f371138f483",
+		"contracts/PharoTashi.sol": {
+			"keccak256": "0xda8e5efed88d91e55f36086294f1cd5b5a7f06299fbf822955c8b70c61eb4d31",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://daade244ed5ac2cd7220d5bb5550a19bb0fd073304617e84994d04f34808299f",
-				"dweb:/ipfs/QmRLwoDtsqeDrxijzWTQbqNmzRDiH569XH2DAwuMTAd7sW"
+				"bzz-raw://1deb06644c32a33910da6494149fea97663b1150d870320acbc9dedbda5b4ec2",
+				"dweb:/ipfs/QmXXdNgQDiwqana64qoZnbkxh3NCUwG1SrTMXj9dxQNWAL"
 			]
 		}
 	},

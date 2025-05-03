@@ -6,7 +6,8 @@ declare global {
     }
 }
 
-export const CONTRACT_ADDRESS: string = "0x0C335161438bb1D0bb7957E9160Fc7759B72eAC8";
+// 0x53c66a0BBF32D8f1b1C40682cba8e25bE548E0da
+export const CONTRACT_ADDRESS: string = "0xc31Ded3A6230872892F415AE0f0b8EB3f23eCaC5";
 
 
 export enum TabType {
@@ -18,17 +19,17 @@ export enum TabType {
 
 export const REFRESH_INTERVAL = 30000;
 
-export const CORE_TESTNET_CHAIN_ID = "0x45a";
+export const CORE_TESTNET_CHAIN_ID = "0xc352";
 export const CORE_TESTNET_PARAMS = {
   chainId: CORE_TESTNET_CHAIN_ID,
   chainName: 'Core Testnet',
   nativeCurrency: {
-    name: 'CORE',
-    symbol: 'tCORE',
+    name: 'Pharos',
+    symbol: 'DPLS',
     decimals: 18
   },
-  rpcUrls: ['https://rpc.test2.btcs.network'],
-  blockExplorerUrls: ['https://scan.test2.btcs.network']
+  rpcUrls: ['https://devnet.dplabs-internal.com/'],
+  blockExplorerUrls: ['https://docs.pharosnetwork.xyz/']
 };
 
 
