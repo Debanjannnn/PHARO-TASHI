@@ -25,7 +25,7 @@ export default function FloatingNavDemo() {
     },
     {
       name: "Contribute",
-      link: "",
+      link: "https://github.com/Debanjannnn/PHARO-TASHI",
       id: "contribute",
       icon: <IconMessageCircle className="h-5 w-5 text-neutral-500 dark:text-white" />,
     },

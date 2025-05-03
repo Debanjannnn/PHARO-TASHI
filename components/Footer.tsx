@@ -4,8 +4,8 @@ import { Github, Twitter, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
-    { name: "Twitter", icon: Twitter, href: "https://x.com/CoroTashi" },
-    { name: "GitHub", icon: Github, href: "https://github.com/PepsiCola-kulfi/CORO-TASHI" },
+    { name: "Twitter", icon: Twitter, href: "https://x.com/PharosTash6971" },
+    { name: "GitHub", icon: Github, href: "https://github.com/Debanjannnn/PHARO-TASHI" },
   ];
 
   return (

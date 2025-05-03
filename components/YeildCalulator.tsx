@@ -56,7 +56,7 @@ const YieldCalculator = () => {
                 transition={{ delay: 0.1 }}
                 className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#2432C5] to-[#2432C5]"
               >
-                BTC Yield Router
+                PHAROS Yield Router
               </motion.h2>
               <div className="flex gap-2">
                 <motion.span
@@ -90,7 +90,7 @@ const YieldCalculator = () => {
                 <p className="text-gray-500 text-xs">Total Value Locked</p>
                 <p className="text-xl font-medium text-gray-800 flex items-center">
                   <span>1,246.5</span>
-                  <span className="text-gray-500 ml-1">BTC</span>
+                  <span className="text-gray-500 ml-1">PHAROS</span>
                 </p>
                 <div className="flex items-center mt-1 text-green-600 text-xs">
                   <TrendingUp className="h-3 w-3 mr-1" />
@@ -171,10 +171,10 @@ const YieldCalculator = () => {
             </div>
           </div>
 
-          {/* BTC Input Section */}
+          {/* PHAROS Input Section */}
           <div className="p-4 border-b border-gray-200 bg-gray-50 backdrop-blur-sm">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-gray-800 text-sm font-medium">Your BTC Amount</h3>
+              <h3 className="text-gray-800 text-sm font-medium">Your PHAROS Amount</h3>
               <div className="relative">
                 <button className="text-xs px-3 py-1 bg-[#2432C5]/10 text-[#2432C5] rounded-full hover:bg-[#2432C5]/20 transition-colors flex items-center border border-[#2432C5]/30 group">
                   Timeframe: 1 Year
@@ -196,7 +196,7 @@ const YieldCalculator = () => {
                 className="bg-transparent text-gray-800 text-xl w-full focus:outline-none px-2"
               />
               <div className="text-[#2432C5] font-medium px-2 bg-[#2432C5]/10 py-1 rounded-lg border border-[#2432C5]/20">
-                BTC
+                PHAROS
               </div>
             </motion.div>
 
@@ -209,7 +209,7 @@ const YieldCalculator = () => {
               >
                 <p className="text-gray-500 text-xs mb-1">Estimated Yield</p>
                 <p className="text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#2432C5] to-[#3a4ad9]">
-                  0.0874 BTC
+                  0.0874 PHAROS
                 </p>
               </motion.div>
               <motion.div
@@ -219,7 +219,7 @@ const YieldCalculator = () => {
                 className="bg-white rounded-xl p-3 border border-gray-200 hover:border-[#2432C5]/30 transition-all duration-300 hover:bg-gray-50"
               >
                 <p className="text-gray-500 text-xs mb-1">Total Value</p>
-                <p className="text-lg font-medium text-gray-800">1.0874 BTC</p>
+                <p className="text-lg font-medium text-gray-800">1.0874 PHAROS</p>
               </motion.div>
             </div>
           </div>

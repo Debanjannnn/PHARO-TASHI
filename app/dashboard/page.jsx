@@ -472,9 +472,9 @@ const UserDashboard = () => {
     <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 flex items-center justify-center">
       <div className="flex flex-col items-center">
         <div className="w-20 h-20 relative mb-4">
-          <div className="absolute inset-0 rounded-full border-4 border-orange-500/20"></div>
+          <div className="absolute inset-0 rounded-full border-4 border-blue-500/20"></div>
           <motion.div
-            className="absolute inset-0 rounded-full border-4 border-orange-500 border-t-transparent"
+            className="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent"
             animate={{ rotate: 360 }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
           />
@@ -482,7 +482,7 @@ const UserDashboard = () => {
             <img src="/image.png" alt="CORO TASHI Logo" className="w-14 h-14 object-contain rounded-full" />
           </div>
         </div>
-        <p className="text-orange-400 font-medium">Loading data...</p>
+        <p className="text-blue-400 font-medium">Loading data...</p>
       </div>
     </div>
   )
@@ -553,27 +553,27 @@ const UserDashboard = () => {
 
       {/* Background elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[180px]"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-orange-500/5 rounded-full blur-[160px]"></div>
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[180px]"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[160px]"></div>
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=2&width=2')] bg-[length:50px_50px] opacity-[0.025]"></div>
 
         {/* Circuit-like pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             {/* Horizontal and vertical lines */}
-            <line x1="0" y1="20" x2="100" y2="20" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
-            <line x1="0" y1="80" x2="100" y2="80" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
-            <line x1="20" y1="0" x2="20" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
-            <line x1="80" y1="0" x2="80" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="0" y1="20" x2="100" y2="20" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="0" y1="80" x2="100" y2="80" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="20" y1="0" x2="20" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="80" y1="0" x2="80" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
 
             {/* Diagonal lines */}
-            <line x1="0" y1="0" x2="100" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,5" />
-            <line x1="100" y1="0" x2="0" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,5" />
+            <line x1="0" y1="0" x2="100" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,5" />
+            <line x1="100" y1="0" x2="0" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,5" />
 
             {/* Circles */}
-            <circle cx="50" cy="50" r="30" stroke="#f97316" strokeWidth="0.3" fill="none" opacity="0.3" />
-            <circle cx="50" cy="50" r="20" stroke="#f97316" strokeWidth="0.3" fill="none" opacity="0.5" />
-            <circle cx="50" cy="50" r="10" stroke="#f97316" strokeWidth="0.3" fill="none" opacity="0.7" />
+            <circle cx="50" cy="50" r="30" stroke="#3b82f6" strokeWidth="0.3" fill="none" opacity="0.3" />
+            <circle cx="50" cy="50" r="20" stroke="#3b82f6" strokeWidth="0.3" fill="none" opacity="0.5" />
+            <circle cx="50" cy="50" r="10" stroke="#3b82f6" strokeWidth="0.3" fill="none" opacity="0.7" />
           </svg>
         </div>
 
@@ -588,14 +588,14 @@ const UserDashboard = () => {
 
         <header className="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-zinc-800/50 pb-6">
           <div className="flex items-center mb-4 md:mb-0">
-            <div className="w-14 h-14 mr-4 relative flex items-center justify-center rounded-full bg-zinc-900/80 border border-orange-500/30 shadow-lg shadow-orange-500/10">
+            <div className="w-14 h-14 mr-4 relative flex items-center justify-center rounded-full bg-zinc-900/80 border border-blue-500/30 shadow-lg shadow-blue-500/10">
               <img src="/image.png" alt="CORO TASHI Logo" className="w-10 h-10 object-contain rounded-full" />
-              <div className="absolute -inset-1 bg-orange-500/20 rounded-full blur-xl -z-10"></div>
+              <div className="absolute -inset-1 bg-blue-500/20 rounded-full blur-xl -z-10"></div>
             </div>
 
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">
-                CORO <span className="text-white">TASHI</span>
+              <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_4px_1.5px_rgba(1,8,255,1)] bg-clip-text text-transparent">
+                PHARO <span className="text-white">TASHI</span>
               </h1>
               <p className="text-zinc-400 text-sm">Staking Dashboard</p>
             </div>
@@ -609,7 +609,7 @@ const UserDashboard = () => {
                   className="p-2 rounded-full bg-zinc-900/80 border border-zinc-800 hover:bg-zinc-800 transition-colors relative"
                 >
                   <Bell className="w-5 h-5 text-zinc-400" />
-                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-orange-500 rounded-full text-[10px] flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full text-[10px] flex items-center justify-center">
                     {notifications.length}
                   </span>
                 </button>
@@ -628,7 +628,7 @@ const UserDashboard = () => {
                       {notifications.slice(0, 5).map((notification, index) => (
                         <div key={index} className="p-2 hover:bg-zinc-800/50 rounded-lg transition-colors mb-1 text-sm">
                           <div className="flex justify-between items-center mb-1">
-                            <span className="text-xs text-orange-400">Pool #{notification.poolId}</span>
+                            <span className="text-xs text-blue-400">Pool #{notification.poolId}</span>
                             <span className="text-xs text-zinc-500">
                               {new Date(notification.timestamp).toLocaleTimeString()}
                             </span>
@@ -639,7 +639,7 @@ const UserDashboard = () => {
                       {notifications.length > 5 && (
                         <button
                           onClick={() => setShowNotifications(false)}
-                          className="w-full text-center text-xs text-orange-400 hover:text-orange-300 py-2 transition-colors"
+                          className="w-full text-center text-xs text-blue-400 hover:text-blue-300 py-2 transition-colors"
                         >
                           View all notifications
                         </button>
@@ -656,7 +656,7 @@ const UserDashboard = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={connectWallet}
                 disabled={loading}
-                className="bg-gradient-to-r from-orange-600 to-orange-400 hover:from-orange-500 hover:to-orange-300 text-white font-medium py-2 px-6 rounded-full flex items-center transition-all duration-300 disabled:opacity-50 shadow-lg shadow-orange-500/20"
+                className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 text-white font-medium py-2 px-6 rounded-full flex items-center transition-all duration-300 disabled:opacity-50 shadow-lg shadow-blue-500/20"
               >
                 {loading ? (
                   <>
@@ -680,7 +680,7 @@ const UserDashboard = () => {
                   onClick={refreshData}
                   className="p-2 rounded-full bg-zinc-900/80 border border-zinc-800 hover:bg-zinc-800 transition-colors"
                 >
-                  <RefreshCw className={`w-5 h-5 text-zinc-400 ${loading ? "animate-spin text-orange-400" : ""}`} />
+                  <RefreshCw className={`w-5 h-5 text-zinc-400 ${loading ? "animate-spin text-blue-400" : ""}`} />
                 </button>
               </div>
             )}
@@ -731,17 +731,17 @@ const UserDashboard = () => {
             <div className="w-24 h-24 mx-auto mb-6 relative">
               <svg viewBox="0 0 100 100" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 {/* Outer hexagon */}
-                <path d="M50 5 L95 30 L95 70 L50 95 L5 70 L5 30 Z" fill="none" stroke="#f97316" strokeWidth="4" />
+                <path d="M50 5 L95 30 L95 70 L50 95 L5 70 L5 30 Z" fill="none" stroke="#3b82f6" strokeWidth="4" />
                 {/* Inner hexagon */}
-                <path d="M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z" fill="none" stroke="#f97316" strokeWidth="3" />
+                <path d="M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z" fill="none" stroke="#3b82f6" strokeWidth="3" />
                 {/* Cube - front face */}
-                <path d="M50 40 L70 50 L70 70 L50 80 Z" fill="#f97316" opacity="0.7" />
+                <path d="M50 40 L70 50 L70 70 L50 80 Z" fill="#3b82f6" opacity="0.7" />
                 {/* Cube - top edge */}
-                <path d="M50 40 L30 50 L50 60 L70 50 Z" fill="none" stroke="#f97316" strokeWidth="3" />
+                <path d="M50 40 L30 50 L50 60 L70 50 Z" fill="none" stroke="#3b82f6" strokeWidth="3" />
                 {/* Cube - side edge */}
-                <path d="M50 60 L50 80 L30 70 L30 50 Z" fill="none" stroke="#f97316" strokeWidth="3" />
+                <path d="M50 60 L50 80 L30 70 L30 50 Z" fill="none" stroke="#3b82f6" strokeWidth="3" />
               </svg>
-              <div className="absolute -inset-4 bg-orange-500/20 rounded-full blur-xl -z-10"></div>
+              <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-xl -z-10"></div>
             </div>
             <h2 className="text-3xl font-bold mb-3">Welcome to CORO TASHI</h2>
             <p className="text-zinc-400 mb-8 max-w-md mx-auto">
@@ -752,7 +752,7 @@ const UserDashboard = () => {
               whileTap={{ scale: 0.98 }}
               onClick={connectWallet}
               disabled={loading}
-              className="bg-gradient-to-r from-orange-600 to-orange-400 hover:from-orange-500 hover:to-orange-300 text-white font-bold py-3 px-8 rounded-full flex items-center mx-auto transition-all duration-300 disabled:opacity-50 shadow-lg shadow-orange-500/20"
+              className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 text-white font-bold py-3 px-8 rounded-full flex items-center mx-auto transition-all duration-300 disabled:opacity-50 shadow-lg shadow-blue-500/20"
             >
               {loading ? (
                 <>
@@ -774,14 +774,14 @@ const UserDashboard = () => {
                 <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl overflow-hidden shadow-xl">
                   <div className="p-4 border-b border-zinc-800 flex justify-between items-center">
                     <div className="flex items-center">
-                      <Layers className="w-5 h-5 text-orange-500 mr-2" />
+                      <Layers className="w-5 h-5 text-blue-500 mr-2" />
                       <h2 className="text-xl font-semibold">Staking Pools</h2>
                     </div>
                     <div className="flex items-center text-sm text-zinc-400">
                       <span className="mr-2">Total Pools: {pools.length}</span>
                       <button
                         onClick={refreshData}
-                        className="text-zinc-400 hover:text-orange-400 p-1 rounded-full transition-colors"
+                        className="text-zinc-400 hover:text-blue-400 p-1 rounded-full transition-colors"
                       >
                         <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
                       </button>
@@ -803,17 +803,17 @@ const UserDashboard = () => {
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.3 }}
                           className={`p-3 hover:bg-zinc-800/30 transition-colors cursor-pointer ${
-                            activePool === pool.id ? "bg-zinc-800/50 border-l-2 border-orange-500" : ""
+                            activePool === pool.id ? "bg-zinc-800/50 border-l-2 border-blue-500" : ""
                           }`}
                           onClick={() => setActivePool(pool.id)}
                         >
                           <div className="flex justify-between items-center mb-2">
                             <h3 className="font-medium flex items-center">
-                              <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center mr-2 text-xs text-orange-400">
+                              <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2 text-xs text-blue-400">
                                 {pool.id}
                               </div>
                               <span className="mr-2">Pool #{pool.id}</span>
-                              <span className="text-xs bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded-full">
+                              <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full">
                                 {pool.APY}% APY
                               </span>
                             </h3>
@@ -826,13 +826,13 @@ const UserDashboard = () => {
                           <div className="grid grid-cols-3 gap-2 text-xs mb-2">
                             <div>
                               <div className="text-zinc-400 flex items-center mb-1">
-                                <span className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-1"></span>
+                                <span className="w-1.5 h-1.5 bg-blue-500/50 rounded-full mr-1"></span>
                                 Staked: {tokenSymbols[pool.stakedToken] || "???"}
                               </div>
                             </div>
                             <div>
                               <div className="text-zinc-400 flex items-center mb-1">
-                                <span className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-1"></span>
+                                <span className="w-1.5 h-1.5 bg-blue-500/50 rounded-full mr-1"></span>
                                 Reward: {tokenSymbols[pool.rewardToken] || "???"}
                               </div>
                             </div>
@@ -848,7 +848,7 @@ const UserDashboard = () => {
                             <div className="flex justify-between items-center mb-2">
                               <span className="text-xs text-zinc-400">Your Position</span>
                               {pool.isLocked ? (
-                                <span className="text-xs flex items-center text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded-full">
+                                <span className="text-xs flex items-center text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full">
                                   <Clock className="w-2.5 h-2.5 mr-1" />
                                   {pool.lockTimeRemaining}
                                 </span>
@@ -864,13 +864,13 @@ const UserDashboard = () => {
                               <div>
                                 <div className="text-zinc-400 mb-1 text-xs">Staked</div>
                                 <div className="font-medium flex items-center">
-                                  <BarChart3 className="w-3 h-3 text-orange-500 mr-1" />
+                                  <BarChart3 className="w-3 h-3 text-blue-500 mr-1" />
                                   {Number.parseFloat(pool.userStaked).toFixed(4)}
                                 </div>
                               </div>
                               <div>
                                 <div className="text-zinc-400 mb-1 text-xs">Pending Rewards</div>
-                                <div className="font-medium flex items-center text-orange-400">
+                                <div className="font-medium flex items-center text-blue-400">
                                   <Award className="w-3 h-3 mr-1" />
                                   {Number.parseFloat(pool.pendingReward).toFixed(4)}
                                 </div>
@@ -886,7 +886,7 @@ const UserDashboard = () => {
                                   handleClaimRewards(pool.id)
                                 }}
                                 disabled={Number.parseFloat(pool.pendingReward) <= 0 || isClaiming}
-                                className="text-xs bg-gradient-to-r from-orange-600 to-orange-400 hover:from-orange-500 hover:to-orange-300 disabled:from-zinc-700 disabled:to-zinc-600 disabled:text-zinc-400 text-white px-3 py-1.5 rounded-lg flex items-center transition-colors flex-1 justify-center shadow-md shadow-orange-500/10"
+                                className="text-xs bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 disabled:from-zinc-700 disabled:to-zinc-600 disabled:text-zinc-400 text-white px-3 py-1.5 rounded-lg flex items-center transition-colors flex-1 justify-center shadow-md shadow-blue-500/10"
                               >
                                 {isClaiming && activePool === pool.id ? (
                                   <RefreshCw className="w-3 h-3 animate-spin mr-1" />
@@ -927,7 +927,7 @@ const UserDashboard = () => {
               <div>
                 <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl overflow-hidden sticky top-4 shadow-xl">
                   <div className="p-4 border-b border-zinc-800 flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center mr-2 text-orange-400">
+                    <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center mr-2 text-blue-400">
                       {activePool}
                     </div>
                     <h2 className="text-xl font-semibold">
@@ -974,7 +974,7 @@ const UserDashboard = () => {
                               value={depositAmount}
                               onChange={(e) => setDepositAmount(e.target.value)}
                               placeholder="0.0"
-                              className="bg-zinc-800 border border-zinc-700 rounded-l-lg p-3 w-full text-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-all"
+                              className="bg-zinc-800 border border-zinc-700 rounded-l-lg p-3 w-full text-white focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
                             />
                             <button
                               type="button"
@@ -991,7 +991,7 @@ const UserDashboard = () => {
                           whileTap={{ scale: 0.98 }}
                           type="submit"
                           disabled={isDepositing || !depositAmount}
-                          className="w-full bg-gradient-to-r from-orange-600 to-orange-400 hover:from-orange-500 hover:to-orange-300 disabled:from-zinc-700 disabled:to-zinc-600 disabled:text-zinc-400 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors font-medium shadow-lg shadow-orange-500/10"
+                          className="w-full bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 disabled:from-zinc-700 disabled:to-zinc-600 disabled:text-zinc-400 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors font-medium shadow-lg shadow-blue-500/10"
                         >
                           {isApproving && isDepositing ? (
                             <>
@@ -1031,7 +1031,7 @@ const UserDashboard = () => {
                           </div>
 
                           {pools[activePool].isLocked && (
-                            <div className="mt-2 text-orange-400 flex items-center text-xs bg-orange-500/10 p-2 rounded-lg">
+                            <div className="mt-2 text-blue-400 flex items-center text-xs bg-blue-500/10 p-2 rounded-lg">
                               <Lock className="w-3 h-3 mr-1" />
                               {pools[activePool].lockTimeRemaining} - Emergency withdrawal available with penalty
                             </div>
@@ -1047,7 +1047,7 @@ const UserDashboard = () => {
                               value={withdrawAmount}
                               onChange={(e) => setWithdrawAmount(e.target.value)}
                               placeholder="0.0"
-                              className="bg-zinc-800 border border-zinc-700 rounded-l-lg p-3 w-full text-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-all"
+                              className="bg-zinc-800 border border-zinc-700 rounded-l-lg p-3 w-full text-white focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
                             />
                             <button
                               type="button"
@@ -1090,7 +1090,7 @@ const UserDashboard = () => {
                             (pools[activePool] &&
                               Number.parseFloat(withdrawAmount) > Number.parseFloat(pools[activePool].userStaked))
                           }
-                          className="w-full bg-gradient-to-r from-orange-600 to-orange-400 hover:from-orange-500 hover:to-orange-300 disabled:from-zinc-700 disabled:to-zinc-600 disabled:text-zinc-400 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors font-medium shadow-lg shadow-orange-500/10"
+                          className="w-full bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 disabled:from-zinc-700 disabled:to-zinc-600 disabled:text-zinc-400 text-white py-3 px-4 rounded-lg flex items-center justify-center transition-colors font-medium shadow-lg shadow-blue-500/10"
                         >
                           {isWithdrawing ? (
                             <>
@@ -1123,7 +1123,7 @@ const UserDashboard = () => {
             <div className="mt-8">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-semibold flex items-center">
-                  <ArrowDownRightFromCircle className="w-5 h-5 text-orange-500 mr-2" />
+                  <ArrowDownRightFromCircle className="w-5 h-5 text-blue-500 mr-2" />
                   Transactions
                 </h2>
                 {notifications.length > 0 && (
@@ -1141,7 +1141,7 @@ const UserDashboard = () => {
                 <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl overflow-hidden">
                   <div className="p-4 border-b border-zinc-800 flex justify-between items-center">
                     <div className="flex items-center">
-                      <TrendingUp className="w-5 h-5 text-orange-500 mr-2" />
+                      <TrendingUp className="w-5 h-5 text-blue-500 mr-2" />
                       <h3 className="text-lg font-semibold">Recent Activity</h3>
                     </div>
                     <div className="text-sm text-zinc-400">
@@ -1159,8 +1159,8 @@ const UserDashboard = () => {
                         className="p-4 hover:bg-zinc-800/30 transition-colors"
                       >
                         <div className="flex items-start gap-3">
-                          <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0 border border-orange-500/20">
-                            <div className="text-sm font-medium text-orange-400">#{notification.poolId}</div>
+                          <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 border border-blue-500/20">
+                            <div className="text-sm font-medium text-blue-400">#{notification.poolId}</div>
                           </div>
 
                           <div className="flex-1 min-w-0">
@@ -1172,7 +1172,7 @@ const UserDashboard = () => {
                             </div>
 
                             {notification.amount !== "0.0" && (
-                              <div className="flex items-center text-sm text-orange-400 bg-orange-500/10 px-2 py-1 rounded-md w-fit">
+                              <div className="flex items-center text-sm text-blue-400 bg-blue-500/10 px-2 py-1 rounded-md w-fit">
                                 <TrendingUp className="w-3 h-3 mr-1" />
                                 <span>{notification.amount}</span>
                               </div>
@@ -1193,7 +1193,7 @@ const UserDashboard = () => {
 
                   {notifications.length > 10 && (
                     <div className="p-3 border-t border-zinc-800 text-center">
-                      <button className="text-orange-400 hover:text-orange-300 transition-colors text-sm flex items-center mx-auto justify-center">
+                      <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm flex items-center mx-auto justify-center">
                         View all transactions
                         <ChevronRight className="w-4 h-4 ml-1" />
                       </button>
