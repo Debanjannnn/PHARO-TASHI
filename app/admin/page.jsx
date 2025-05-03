@@ -360,7 +360,7 @@ const AdminDashboard = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-3xl font-bold text-blue-900 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent"
       >
-        CORO <span className="text-blue-600">TASHI</span>
+        PHARO <span className="text-blue-600">TASHI</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -407,8 +407,8 @@ const AdminDashboard = () => {
         </div>
         {sidebarOpen && (
           <div>
-            <h1 className="text-xl font-bold text-blue-900 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-              CORO <span className="text-blue-600">TASHI</span>
+            <h1 className="text-xl font-bold text-white drop-shadow-[0_2px_1.5px_rgba(1,8,255,1)] bg-clip-text text-transparent">
+              PHARO <span className="text-blue-600">TASHI</span>
             </h1>
             <p className="text-xs text-blue-400">Admin Dashboard</p>
           </div>

@@ -134,7 +134,7 @@ const YieldCalculator = () => {
                 className="hover:text-[#2432C5] cursor-pointer transition-colors flex items-center"
               >
                 <span className="h-2 w-2 bg-[#2432C5] rounded-full mr-1"></span>
-                CoreDAO: 64%
+                PHAROS: 64%
               </motion.span>
               <motion.span
                 initial={{ opacity: 0 }}
@@ -317,7 +317,7 @@ const YieldCalculator = () => {
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2432C5]/30 to-[#2432C5]/20 flex items-center justify-center border border-[#2432C5]/20">
                     <div className="text-[#2432C5] text-xs font-bold">C</div>
                   </div>
-                  <span className="text-xs text-gray-800">CoreDAO</span>
+                  <span className="text-xs text-gray-800">PHAROS</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <span className="text-green-600 text-xs flex items-center">
