@@ -50,7 +50,7 @@ PHARO-TASHI is a cutting-edge staking protocol built on the PHAROS blockchain, o
 
 ```bash
 # Clone the repository
-git clone https://github.com/PepsiCola-kulfi/PHARO-TASHI.git
+git clone https://github.com/Debanjannnn/PHARO-TASHI
 cd PHARO-TASHI
 
 # Install dependencies
@@ -81,7 +81,7 @@ npm run dev
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Contact
-For any inquiries, reach out to us at `corotashi@gmail.com`
+For any inquiries, reach out to us at `pharostashi@gmail.com`
 
 ## 📄 License
 This project is licensed under the MIT License.
