@@ -433,14 +433,16 @@ const UserDashboard = () => {
   }
 
   // Loading screen component with CORO TASHI logo
-  const LoadingScreen = ({ message = "Loading dashboard..." }) => (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
+  const LoadingScreen = ({ 
+    message = "Loading dashboard..." 
+  }) => (
+    <div className="fixed inset-0 bg-blue-600 z-50 flex flex-col items-center justify-center">
       <div className="relative w-40 h-40 mb-6">
-        <div className="absolute inset-0 rounded-full border-4 border-orange-500/30"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-white/30"></div>
         <motion.div
-          className="absolute inset-0 rounded-full border-4 border-orange-500 border-t-transparent"
+          className="absolute inset-0 rounded-full border-4 border-white border-t-transparent"
           animate={{ rotate: 360 }}
-          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <img src="/image.png" alt="CORO TASHI Logo" className="w-28 h-28 object-contain rounded-full" />
@@ -450,20 +452,20 @@ const UserDashboard = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="text-3xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent"
+        className="text-3xl font-bold text-white"
       >
-        CORO <span className="text-orange-600">TASHI</span>
+        PHARO <span className="text-white">TASHI</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="text-zinc-400 mt-2"
+        className="text-white/80 mt-2"
       >
         {message}
       </motion.p>
     </div>
-  )
+  );
 
   // Add a data loading overlay component
   const DataLoadingOverlay = () => (

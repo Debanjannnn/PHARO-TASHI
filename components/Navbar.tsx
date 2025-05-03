@@ -19,13 +19,13 @@ export default function FloatingNavDemo() {
     },
     {
       name: "Docs",
-      link: "https://coro-tashi.gitbook.io/coro-tashi",
+      link: "",
       id: "DOCS",
       icon: <IconUser className="h-5 w-5 text-neutral-500 dark:text-white" />,
     },
     {
       name: "Contribute",
-      link: "https://github.com/PepsiCola-kulfi/CORO-TASHI",
+      link: "",
       id: "contribute",
       icon: <IconMessageCircle className="h-5 w-5 text-neutral-500 dark:text-white" />,
     },
