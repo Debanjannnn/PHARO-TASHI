@@ -65,12 +65,13 @@ npm run dev
 - **Chain ID**: `50002`
 - **Symbol**: `Pharos`
 
- 
 
-### Contract Addresse
+
+### Contract Addresses
 https://pharosscan.xyz/address/0x3aFC898c5052DaEE15c7c4Fe0361761A11ff8d4E
-PST: 0xa7AD1C1eE9b701591B68701ad5893941F156053d
-TSI : 0x4f9fE99d666381a045b9F3690104a61cdC5c1bbe
+### Token Addresses
+- PST: 0xa7AD1C1eE9b701591B68701ad5893941F156053d
+- TSI : 0x4f9fE99d666381a045b9F3690104a61cdC5c1bbe
 
 ## How It Works
 
