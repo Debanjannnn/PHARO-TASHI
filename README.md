@@ -1,4 +1,4 @@
-# PHARO-TASHI - Next-Gen Staking Protocol
+# PHARO-TASHI - EARN LIKE NEVER BEFORE
 
 ## Overview
 PHARO-TASHI is a cutting-edge staking protocol built on the PHAROS blockchain, offering seamless token staking with auto-compounding rewards. Built with Next.js and modern web3 technologies, it provides a secure and user-friendly interface for staking operations.
@@ -61,17 +61,21 @@ npm run dev
 ```
 
 ### Network Configuration
-- **RPC URL**: `http://rpc.test2.btcs.network/`
-- **Chain ID**: `1114 (0x45A)`
-- **Symbol**: `PTT`
+- **RPC URL**: `devnet.dplabs-internal.com`
+- **Chain ID**: `50002`
+- **Symbol**: `Pharos`
+
+ 
 
 ### Contract Addresse
 https://pharosscan.xyz/address/0x3aFC898c5052DaEE15c7c4Fe0361761A11ff8d4E
+PST: 0xa7AD1C1eE9b701591B68701ad5893941F156053d
+TSI : 0x4f9fE99d666381a045b9F3690104a61cdC5c1bbe
 
 ## How It Works
 
 1. **Deposit PHAROS tokens** into the staking pool
-2. **Receive stTOKEN**, a liquid staking token that represents your staked position
+2. **Receive TSI**, a liquid staking token that represents your staked position
 3. **Earn rewards** automatically through auto-compounding
 4. **Unstake anytime** with no lockup periods
 5. **Track your rewards** in real-time through the dashboard
