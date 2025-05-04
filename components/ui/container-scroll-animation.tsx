@@ -96,7 +96,7 @@ export const Card = ({
         scale,
         opacity,
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full relative rounded-[30px] shadow-2xl"
+      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[43rem] w-full relative rounded-[30px] shadow-2xl"
     >
       {/* Card border with gradient */}
       <div className="absolute inset-0 rounded-[30px] p-[2px] bg-gradient-to-b from-orange-500/80 via-orange-500/20 to-transparent">
@@ -108,7 +108,7 @@ export const Card = ({
         <div className="h-full w-full overflow-hidden rounded-2xl bg-zinc-900 md:rounded-2xl md:p-4">
           {/* Decorative elements */}
           <div className="absolute top-4 right-4 flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+            <div className="w-3 h-3 rounded-full bg-indigo-500"></div>
             <div className="w-3 h-3 rounded-full bg-white/50"></div>
             <div className="w-3 h-3 rounded-full bg-white/30"></div>
           </div>

@@ -343,31 +343,31 @@ const AdminDashboard = () => {
 
   // Loading screen component with Core DAO logo
   const LoadingScreen = ({ message = "Loading admin dashboard..." }) => (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
+    <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
       <div className="relative w-40 h-40 mb-6">
-        <div className="absolute inset-0 rounded-full border-4 border-orange-500/30"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-blue-500/30"></div>
         <motion.div
-          className="absolute inset-0 rounded-full border-4 border-orange-500 border-t-transparent"
+          className="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent"
           animate={{ rotate: 360 }}
           transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <img src="/image.png" alt="CORO TASHI Logo" className="w-28 h-28 object-contain" />
+          <img src="/image.png" alt="CORO TASHI Logo" className="w-28 h-28 object-contain rounded-full" />
         </div>
       </div>
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="text-3xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent"
+        className="text-3xl font-bold text-blue-900 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent"
       >
-        CORO <span className="text-orange-600">TASHI</span>
+        PHARO <span className="text-blue-600">TASHI</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="text-zinc-400 mt-2"
+        className="text-blue-400 mt-2"
       >
         {message}
       </motion.p>
@@ -376,20 +376,20 @@ const AdminDashboard = () => {
 
   // Data loading overlay
   const DataLoadingOverlay = () => (
-    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-20 flex items-center justify-center">
+    <div className="absolute inset-0 bg-white/70 backdrop-blur-sm z-20 flex items-center justify-center">
       <div className="flex flex-col items-center">
         <div className="w-20 h-20 relative mb-4">
-          <div className="absolute inset-0 rounded-full border-4 border-orange-500/20"></div>
+          <div className="absolute inset-0 rounded-full border-4 border-blue-500/20"></div>
           <motion.div
-            className="absolute inset-0 rounded-full border-4 border-orange-500 border-t-transparent"
+            className="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent"
             animate={{ rotate: 360 }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <img src="/image.png" alt="CORO TASHI Logo" className="w-14 h-14 object-contain" />
+            <img src="/image.png" alt="CORO TASHI Logo" className="w-14 h-14 object-contain rounded-full" />
           </div>
         </div>
-        <p className="text-orange-400 font-medium">Loading data...</p>
+        <p className="text-blue-400 font-medium">Loading data...</p>
       </div>
     </div>
   )
@@ -397,21 +397,21 @@ const AdminDashboard = () => {
   // Sidebar component
   const Sidebar = () => (
     <div
-      className={`fixed top-0 left-0 h-full bg-zinc-900/95 backdrop-blur-md border-r border-zinc-800/50 transition-all duration-300 z-20 ${
+      className={`fixed top-0 left-0 h-full bg-white/95 backdrop-blur-md border-r border-blue-200 transition-all duration-300 z-20 ${
         sidebarOpen ? "w-64" : "w-20"
       }`}
     >
-      <div className="p-4 border-b border-zinc-800/30 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full flex items-center justify-center relative overflow-hidden bg-black/40 border border-orange-500/30">
+      <div className="p-4 border-b border-blue-200 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center relative overflow-hidden bg-blue-50 border border-blue-200">
           <img src="/image.png" alt="CORO TASHI Logo" className="w-14 h-14 object-contain " />
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
         </div>
         {sidebarOpen && (
           <div>
-            <h1 className="text-xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">
-              CORO <span className="text-orange-600">TASHI</span>
+            <h1 className="text-xl font-bold text-white drop-shadow-[0_2px_1.5px_rgba(1,8,255,1)] bg-clip-text text-transparent">
+              PHARO <span className="text-blue-600">TASHI</span>
             </h1>
-            <p className="text-xs text-zinc-400">Admin Dashboard</p>
+            <p className="text-xs text-blue-400">Admin Dashboard</p>
           </div>
         )}
       </div>
@@ -423,8 +423,8 @@ const AdminDashboard = () => {
               onClick={() => setActiveTab("overview")}
               className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
                 activeTab === "overview"
-                  ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
-                  : "text-zinc-400 hover:bg-zinc-800/80 hover:text-white"
+                  ? "bg-blue-500/20 text-blue-600 border border-blue-500/30"
+                  : "text-blue-400 hover:bg-blue-50/80 hover:text-blue-600"
               }`}
             >
               <LayoutDashboard className="w-5 h-5" />
@@ -436,8 +436,8 @@ const AdminDashboard = () => {
               onClick={() => setActiveTab("pools")}
               className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
                 activeTab === "pools"
-                  ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
-                  : "text-zinc-400 hover:bg-zinc-800/80 hover:text-white"
+                  ? "bg-blue-500/20 text-blue-600 border border-blue-500/30"
+                  : "text-blue-400 hover:bg-blue-50/80 hover:text-blue-600"
               }`}
             >
               <Layers className="w-5 h-5" />
@@ -449,8 +449,8 @@ const AdminDashboard = () => {
               onClick={() => setActiveTab("rewards")}
               className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
                 activeTab === "rewards"
-                  ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
-                  : "text-zinc-400 hover:bg-zinc-800/80 hover:text-white"
+                  ? "bg-blue-500/20 text-blue-600 border border-blue-500/30"
+                  : "text-blue-400 hover:bg-blue-50/80 hover:text-blue-600"
               }`}
             >
               <CoinsIcon className="w-5 h-5" />
@@ -462,8 +462,8 @@ const AdminDashboard = () => {
               onClick={() => setActiveTab("settings")}
               className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
                 activeTab === "settings"
-                  ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
-                  : "text-zinc-400 hover:bg-zinc-800/80 hover:text-white"
+                  ? "bg-blue-500/20 text-blue-600 border border-blue-500/30"
+                  : "text-blue-400 hover:bg-blue-50/80 hover:text-blue-600"
               }`}
             >
               <Settings className="w-5 h-5" />
@@ -473,11 +473,11 @@ const AdminDashboard = () => {
         </ul>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full p-4 border-t border-zinc-800/30">
+      <div className="absolute bottom-0 left-0 w-full p-4 border-t border-blue-200">
         {!account ? (
           <Button
             onClick={connectWallet}
-            className={`w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white flex items-center gap-2 justify-center shadow-lg shadow-orange-500/20 border-0 ${
+            className={`w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white flex items-center gap-2 justify-center shadow-lg shadow-blue-500/20 border-0 ${
               !sidebarOpen && "p-2"
             }`}
           >
@@ -486,23 +486,23 @@ const AdminDashboard = () => {
           </Button>
         ) : (
           <div className="space-y-2">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-md bg-zinc-800/80 backdrop-blur-sm border border-zinc-700/50">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md bg-blue-50/80 backdrop-blur-sm border border-blue-200">
               <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              <span className="text-sm truncate">
+              <span className="text-sm truncate text-blue-900">
                 {sidebarOpen
                   ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}`
                   : `${account.substring(0, 4)}...`}
               </span>
             </div>
             {sidebarOpen && (
-              <div className="text-xs px-2 py-1 rounded-md bg-orange-500/20 text-orange-400 text-center border border-orange-500/30">
+              <div className="text-xs px-2 py-1 rounded-md bg-blue-500/20 text-blue-600 text-center border border-blue-500/30">
                 {isOwner ? "Admin" : "Not Admin"}
               </div>
             )}
             <Button
               variant="ghost"
               size="sm"
-              className="w-full text-zinc-400 hover:text-white hover:bg-zinc-800 mt-2"
+              className="w-full text-blue-400 hover:text-blue-600 hover:bg-blue-50 mt-2"
               onClick={disconnectWallet}
             >
               <LogOut className="w-4 h-4" />
@@ -515,38 +515,38 @@ const AdminDashboard = () => {
   )
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-blue-900">
       <AnimatePresence>{pageLoading && <LoadingScreen />}</AnimatePresence>
 
       {/* Background elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[180px]"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-orange-500/5 rounded-full blur-[160px]"></div>
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[180px]"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[160px]"></div>
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=2&width=2')] bg-[length:50px_50px] opacity-[0.025]"></div>
 
         {/* Circuit-like pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             {/* Horizontal and vertical lines */}
-            <line x1="0" y1="20" x2="100" y2="20" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
-            <line x1="0" y1="80" x2="100" y2="80" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
-            <line x1="20" y1="0" x2="20" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
-            <line x1="80" y1="0" x2="80" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="0" y1="20" x2="100" y2="20" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="0" y1="80" x2="100" y2="80" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="20" y1="0" x2="20" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
+            <line x1="80" y1="0" x2="80" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,3" />
 
             {/* Diagonal lines */}
-            <line x1="0" y1="0" x2="100" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,5" />
-            <line x1="100" y1="0" x2="0" y2="100" stroke="#f97316" strokeWidth="0.2" strokeDasharray="1,5" />
+            <line x1="0" y1="0" x2="100" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,5" />
+            <line x1="100" y1="0" x2="0" y2="100" stroke="#3b82f6" strokeWidth="0.2" strokeDasharray="1,5" />
 
             {/* Circles */}
-            <circle cx="50" cy="50" r="30" stroke="#f97316" strokeWidth="0.3" fill="none" opacity="0.3" />
-            <circle cx="50" cy="50" r="20" stroke="#f97316" strokeWidth="0.3" fill="none" opacity="0.5" />
-            <circle cx="50" cy="50" r="10" stroke="#f97316" strokeWidth="0.3" fill="none" opacity="0.7" />
+            <circle cx="50" cy="50" r="30" stroke="#3b82f6" strokeWidth="0.3" fill="none" opacity="0.3" />
+            <circle cx="50" cy="50" r="20" stroke="#3b82f6" strokeWidth="0.3" fill="none" opacity="0.5" />
+            <circle cx="50" cy="50" r="10" stroke="#3b82f6" strokeWidth="0.3" fill="none" opacity="0.7" />
           </svg>
         </div>
 
         {/* Vignette effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white opacity-70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white opacity-70"></div>
       </div>
 
       {/* Sidebar */}
@@ -555,12 +555,12 @@ const AdminDashboard = () => {
       {/* Main content */}
       <div className={`transition-all duration-300 ${sidebarOpen ? "ml-64" : "ml-20"} min-h-screen relative`}>
         {/* Header */}
-        <div className="sticky top-0 z-10 bg-black/80 backdrop-blur-md border-b border-zinc-800/50 px-6 py-4">
+        <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-blue-200 px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="p-2 rounded-md hover:bg-zinc-800/80 text-zinc-400 hover:text-white transition-colors"
+                className="p-2 rounded-md hover:bg-blue-50/80 text-blue-400 hover:text-blue-600 transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>
@@ -569,7 +569,7 @@ const AdminDashboard = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-2xl font-bold text-white"
+                className="text-2xl font-bold text-blue-900"
               >
                 {activeTab === "overview" && "Dashboard Overview"}
                 {activeTab === "pools" && "Manage Staking Pools"}
@@ -583,21 +583,21 @@ const AdminDashboard = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-zinc-400 hover:text-orange-400 flex items-center gap-1"
+                  className="text-blue-400 hover:text-blue-600 flex items-center gap-1"
                   onClick={fetchPools}
                   disabled={refreshing}
                 >
                   <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
                   <span className="hidden sm:inline">Refresh</span>
                 </Button>
-                <div className="flex items-center px-3 py-2 rounded-full bg-zinc-800/80 backdrop-blur-sm border border-zinc-700/50">
+                <div className="flex items-center px-3 py-2 rounded-full bg-blue-50/80 backdrop-blur-sm border border-blue-200">
                   <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                  <span className="text-white text-sm">
+                  <span className="text-blue-900 text-sm">
                     {account.substring(0, 6)}...{account.substring(account.length - 4)}
                   </span>
                 </div>
                 {isOwner ? (
-                  <span className="px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-sm border border-orange-500/30">
+                  <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-600 text-sm border border-blue-500/30">
                     Admin
                   </span>
                 ) : (
@@ -632,29 +632,29 @@ const AdminDashboard = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center p-12 bg-zinc-900/80 backdrop-blur-sm rounded-xl border border-zinc-800"
+              className="flex flex-col items-center justify-center p-12 bg-blue-50/80 backdrop-blur-sm rounded-xl border border-blue-200"
             >
               <div className="w-20 h-20 mb-6">
                 <svg viewBox="0 0 100 100" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   {/* Outer hexagon */}
-                  <path d="M50 5 L95 30 L95 70 L50 95 L5 70 L5 30 Z" fill="none" stroke="#f97316" strokeWidth="4" />
+                  <path d="M50 5 L95 30 L95 70 L50 95 L5 70 L5 30 Z" fill="none" stroke="#3b82f6" strokeWidth="4" />
                   {/* Inner hexagon */}
-                  <path d="M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z" fill="none" stroke="#f97316" strokeWidth="3" />
+                  <path d="M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z" fill="none" stroke="#3b82f6" strokeWidth="3" />
                   {/* Cube - front face */}
-                  <path d="M50 40 L70 50 L70 70 L50 80 Z" fill="#f97316" opacity="0.7" />
+                  <path d="M50 40 L70 50 L70 70 L50 80 Z" fill="#3b82f6" opacity="0.7" />
                   {/* Cube - top edge */}
-                  <path d="M50 40 L30 50 L50 60 L70 50 Z" fill="none" stroke="#f97316" strokeWidth="3" />
+                  <path d="M50 40 L30 50 L50 60 L70 50 Z" fill="none" stroke="#3b82f6" strokeWidth="3" />
                   {/* Cube - side edge */}
-                  <path d="M50 60 L50 80 L30 70 L30 50 Z" fill="none" stroke="#f97316" strokeWidth="3" />
+                  <path d="M50 60 L50 80 L30 70 L30 50 Z" fill="none" stroke="#3b82f6" strokeWidth="3" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-semibold text-white mb-2">Connect Your Wallet</h2>
-              <p className="text-zinc-400 mb-6 text-center max-w-md">
+              <h2 className="text-2xl font-semibold text-blue-900 mb-2">Connect Your Wallet</h2>
+              <p className="text-blue-400 mb-6 text-center max-w-md">
                 Connect your wallet to access the admin dashboard and manage your staking pools.
               </p>
               <Button
                 onClick={connectWallet}
-                className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white flex items-center gap-2 shadow-lg shadow-orange-500/20 border-0"
+                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white flex items-center gap-2 shadow-lg shadow-blue-500/20 border-0"
               >
                 <Wallet className="w-4 h-4" />
                 Connect Wallet
@@ -667,11 +667,11 @@ const AdminDashboard = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center p-12 bg-zinc-900/80 backdrop-blur-sm rounded-xl border border-zinc-800"
+              className="flex flex-col items-center justify-center p-12 bg-blue-50/80 backdrop-blur-sm rounded-xl border border-blue-200"
             >
               <AlertCircle className="w-16 h-16 text-red-500 mb-4" />
-              <h2 className="text-xl font-semibold text-white mb-2">Access Denied</h2>
-              <p className="text-zinc-400 mb-6 text-center max-w-md">
+              <h2 className="text-xl font-semibold text-blue-900 mb-2">Access Denied</h2>
+              <p className="text-blue-400 mb-6 text-center max-w-md">
                 You are connected but not the owner. Please connect with the owner account to access admin features.
               </p>
             </motion.div>
@@ -693,29 +693,29 @@ const AdminDashboard = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 }}
                       >
-                        <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 overflow-hidden hover:border-orange-500/30 transition-colors duration-300">
-                          <div className="h-1 bg-gradient-to-r from-orange-600 to-orange-400"></div>
+                        <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 overflow-hidden hover:border-blue-500/30 transition-colors duration-300">
+                          <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
                           <CardContent className="p-6">
                             <div className="flex items-center justify-between">
                               <div>
-                                <p className="text-sm text-zinc-400">Total Pools</p>
-                                <h3 className="text-3xl font-bold text-white mt-1">{pools.length}</h3>
+                                <p className="text-sm text-blue-400">Total Pools</p>
+                                <h3 className="text-3xl font-bold text-blue-900 mt-1">{pools.length}</h3>
                               </div>
-                              <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                                <Layers className="w-6 h-6 text-orange-500" />
+                              <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <Layers className="w-6 h-6 text-blue-500" />
                               </div>
                             </div>
                             <div className="mt-4">
-                              <div className="flex justify-between text-xs text-zinc-400 mb-1">
+                              <div className="flex justify-between text-xs text-blue-400 mb-1">
                                 <span>Active Pools</span>
                                 <span>{pools.length} / 10</span>
                               </div>
-                              <div className="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                              <div className="h-1 w-full bg-blue-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${(pools.length / 10) * 100}%` }}
                                   transition={{ duration: 1, delay: 0.5 }}
-                                  className="h-full bg-gradient-to-r from-orange-600 to-orange-400 rounded-full"
+                                  className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"
                                 ></motion.div>
                               </div>
                             </div>
@@ -728,29 +728,29 @@ const AdminDashboard = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 }}
                       >
-                        <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 overflow-hidden hover:border-orange-500/30 transition-colors duration-300">
-                          <div className="h-1 bg-gradient-to-r from-orange-600 to-orange-400"></div>
+                        <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 overflow-hidden hover:border-blue-500/30 transition-colors duration-300">
+                          <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
                           <CardContent className="p-6">
                             <div className="flex items-center justify-between">
                               <div>
-                                <p className="text-sm text-zinc-400">Total Staked</p>
-                                <h3 className="text-3xl font-bold text-white mt-1">{totalStaked} TBTC <small className="font-thin text-sm"> (wBTC)</small></h3>
+                                <p className="text-sm text-blue-400">Total Staked</p>
+                                <h3 className="text-3xl font-bold text-blue-900 mt-1">{totalStaked} TBTC <small className="font-thin text-sm"> (wBTC)</small></h3>
                               </div>
-                              <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                                <BarChart3 className="w-6 h-6 text-orange-500" />
+                              <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <BarChart3 className="w-6 h-6 text-blue-500" />
                               </div>
                             </div>
                             <div className="mt-4">
-                              <div className="flex justify-between text-xs text-zinc-400 mb-1">
+                              <div className="flex justify-between text-xs text-blue-400 mb-1">
                                 <span>Average APY</span>
-                                <span className="text-orange-400">{avgAPY}%</span>
+                                <span className="text-blue-400">{avgAPY}%</span>
                               </div>
-                              <div className="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                              <div className="h-1 w-full bg-blue-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${Math.min((Number.parseFloat(avgAPY) / 100) * 100, 100)}%` }}
                                   transition={{ duration: 1, delay: 0.5 }}
-                                  className="h-full bg-gradient-to-r from-orange-600 to-orange-400 rounded-full"
+                                  className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"
                                 ></motion.div>
                               </div>
                             </div>
@@ -763,31 +763,31 @@ const AdminDashboard = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.3 }}
                       >
-                        <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 overflow-hidden hover:border-orange-500/30 transition-colors duration-300">
-                          <div className="h-1 bg-gradient-to-r from-orange-600 to-orange-400"></div>
+                        <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 overflow-hidden hover:border-blue-500/30 transition-colors duration-300">
+                          <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
                           <CardContent className="p-6">
                             <div className="flex items-center justify-between">
                               <div>
-                                <p className="text-sm text-zinc-400">Available Rewards</p>
-                                <h3 className="text-3xl font-bold text-white mt-1">{totalRewards} TSI <br/>  <small className="font-thin text-sm"> (Tashi Staked Incentives) </small> </h3>
+                                <p className="text-sm text-blue-400">Available Rewards</p>
+                                <h3 className="text-3xl font-bold text-blue-900 mt-1">{totalRewards} TSI <br/>  <small className="font-thin text-sm"> (Tashi Staked Incentives) </small> </h3>
                               </div>
-                              <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                                <CoinsIcon className="w-6 h-6 text-orange-500" />
+                              <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                <CoinsIcon className="w-6 h-6 text-blue-500" />
                               </div>
                             </div>
                             <div className="mt-4 flex items-center text-xs">
-                              <div className="w-3 h-3 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mr-2"></div>
-                              <span className="text-zinc-400">Across {pools.length} pools</span>
+                              <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 mr-2"></div>
+                              <span className="text-blue-400">Across {pools.length} pools</span>
                             </div>
                           </CardContent>
                         </Card>
                       </motion.div>
                     </div>
 
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <Layers className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <Layers className="w-5 h-5 text-blue-500" />
                           Pools Overview
                         </CardTitle>
                       </CardHeader>
@@ -795,28 +795,28 @@ const AdminDashboard = () => {
                         <div className="overflow-x-auto">
                           <table className="w-full">
                             <thead>
-                              <tr className="border-b border-zinc-800">
-                                <th className="text-left py-3 px-4 text-zinc-400 font-medium">Pool ID</th>
-                                <th className="text-left py-3 px-4 text-zinc-400 font-medium">Staked Token</th>
-                                <th className="text-left py-3 px-4 text-zinc-400 font-medium">Reward Token</th>
-                                <th className="text-right py-3 px-4 text-zinc-400 font-medium">Total Staked</th>
-                                <th className="text-right py-3 px-4 text-zinc-400 font-medium">APY</th>
-                                <th className="text-right py-3 px-4 text-zinc-400 font-medium">Lock Period</th>
-                                <th className="text-right py-3 px-4 text-zinc-400 font-medium">Available Rewards</th>
-                                <th className="text-center py-3 px-4 text-zinc-400 font-medium">Status</th>
+                              <tr className="border-b border-blue-200">
+                                <th className="text-left py-3 px-4 text-blue-400 font-medium">Pool ID</th>
+                                <th className="text-left py-3 px-4 text-blue-400 font-medium">Staked Token</th>
+                                <th className="text-left py-3 px-4 text-blue-400 font-medium">Reward Token</th>
+                                <th className="text-right py-3 px-4 text-blue-400 font-medium">Total Staked</th>
+                                <th className="text-right py-3 px-4 text-blue-400 font-medium">APY</th>
+                                <th className="text-right py-3 px-4 text-blue-400 font-medium">Lock Period</th>
+                                <th className="text-right py-3 px-4 text-blue-400 font-medium">Available Rewards</th>
+                                <th className="text-center py-3 px-4 text-blue-400 font-medium">Status</th>
                               </tr>
                             </thead>
                             <tbody>
                               {pools.length === 0 ? (
                                 <tr>
-                                  <td colSpan={8} className="text-center py-8 text-zinc-400">
+                                  <td colSpan={8} className="text-center py-8 text-blue-400">
                                     <div className="flex flex-col items-center">
-                                      <Layers className="w-10 h-10 text-zinc-600 mb-2" />
+                                      <Layers className="w-10 h-10 text-blue-600 mb-2" />
                                       No pools created yet.
                                       <Button
                                         variant="link"
                                         onClick={() => setActiveTab("pools")}
-                                        className="text-orange-400 hover:text-orange-300 mt-2"
+                                        className="text-blue-400 hover:text-blue-300 mt-2"
                                       >
                                         Create your first pool
                                       </Button>
@@ -825,16 +825,16 @@ const AdminDashboard = () => {
                                 </tr>
                               ) : (
                                 pools.map((pool) => (
-                                  <tr key={pool.id} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                                  <tr key={pool.id} className="border-b border-blue-200/50 hover:bg-blue-50/30">
                                     <td className="py-3 px-4">
-                                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-800 text-white">
+                                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-800 text-blue-900">
                                         {pool.id}
                                       </span>
                                     </td>
                                     <td className="py-3 px-4">
                                       <div className="flex items-center">
-                                        <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center mr-2">
-                                          <span className="text-xs text-orange-400">
+                                        <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                                          <span className="text-xs text-blue-400">
                                             {pool.stakedTokenSymbol.charAt(0)}
                                           </span>
                                         </div>
@@ -843,8 +843,8 @@ const AdminDashboard = () => {
                                     </td>
                                     <td className="py-3 px-4">
                                       <div className="flex items-center">
-                                        <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center mr-2">
-                                          <span className="text-xs text-orange-400">
+                                        <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                                          <span className="text-xs text-blue-400">
                                             {pool.rewardTokenSymbol.charAt(0)}
                                           </span>
                                         </div>
@@ -854,9 +854,9 @@ const AdminDashboard = () => {
                                     <td className="py-3 px-4 text-right">
                                       {pool.totalStaked} {pool.stakedTokenSymbol}
                                     </td>
-                                    <td className="py-3 px-4 text-right text-orange-400">{pool.APY}%</td>
+                                    <td className="py-3 px-4 text-right text-blue-400">{pool.APY}%</td>
                                     <td className="py-3 px-4 text-right">{pool.lockDays} days</td>
-                                    <td className="py-3 px-4 text-right text-orange-400">
+                                    <td className="py-3 px-4 text-right text-blue-400">
                                       {pool.availableRewards} {pool.rewardTokenSymbol}
                                     </td>
                                     <td className="py-3 px-4 text-center">
@@ -875,57 +875,57 @@ const AdminDashboard = () => {
                     </Card>
 
                     {/* Recent Activity Card */}
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <Clock className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <Clock className="w-5 h-5 text-blue-500" />
                           Recent Activity
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
                           {pools.length === 0 ? (
-                            <div className="text-center py-8 text-zinc-400">
-                              <Clock className="w-10 h-10 text-zinc-600 mx-auto mb-2" />
+                            <div className="text-center py-8 text-blue-400">
+                              <Clock className="w-10 h-10 text-blue-600 mx-auto mb-2" />
                               No recent activity to display
                             </div>
                           ) : (
                             <>
-                              <div className="flex items-start gap-3 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
+                              <div className="flex items-start gap-3 p-3 rounded-lg bg-blue-800/50 border border-blue-700/50">
                                 <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
                                   <Plus className="w-4 h-4 text-green-400" />
                                 </div>
                                 <div>
-                                  <h4 className="text-sm font-medium text-white">Pool #{pools.length - 1} Created</h4>
-                                  <p className="text-xs text-zinc-400 mt-1">
+                                  <h4 className="text-sm font-medium text-blue-900">Pool #{pools.length - 1} Created</h4>
+                                  <p className="text-xs text-blue-400 mt-1">
                                     New staking pool for {pools[pools.length - 1]?.stakedTokenSymbol || "Unknown"} with{" "}
                                     {pools[pools.length - 1]?.APY || "0"}% APY
                                   </p>
-                                  <p className="text-xs text-zinc-500 mt-1">2 hours ago</p>
+                                  <p className="text-xs text-blue-500 mt-1">2 hours ago</p>
                                 </div>
                               </div>
-                              <div className="flex items-start gap-3 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
-                                <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0">
-                                  <CoinsIcon className="w-4 h-4 text-orange-400" />
+                              <div className="flex items-start gap-3 p-3 rounded-lg bg-blue-800/50 border border-blue-700/50">
+                                <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                  <CoinsIcon className="w-4 h-4 text-blue-400" />
                                 </div>
                                 <div>
-                                  <h4 className="text-sm font-medium text-white">Rewards Deposited</h4>
-                                  <p className="text-xs text-zinc-400 mt-1">
+                                  <h4 className="text-sm font-medium text-blue-900">Rewards Deposited</h4>
+                                  <p className="text-xs text-blue-400 mt-1">
                                     {totalRewards} tokens added to reward pool
                                   </p>
-                                  <p className="text-xs text-zinc-500 mt-1">5 hours ago</p>
+                                  <p className="text-xs text-blue-500 mt-1">5 hours ago</p>
                                 </div>
                               </div>
-                              <div className="flex items-start gap-3 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
+                              <div className="flex items-start gap-3 p-3 rounded-lg bg-blue-800/50 border border-blue-700/50">
                                 <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
                                   <BarChart3 className="w-4 h-4 text-blue-400" />
                                 </div>
                                 <div>
-                                  <h4 className="text-sm font-medium text-white">APY Updated</h4>
-                                  <p className="text-xs text-zinc-400 mt-1">
+                                  <h4 className="text-sm font-medium text-blue-900">APY Updated</h4>
+                                  <p className="text-xs text-blue-400 mt-1">
                                     Pool #0 APY adjusted to {pools[0]?.APY || "0"}%
                                   </p>
-                                  <p className="text-xs text-zinc-500 mt-1">1 day ago</p>
+                                  <p className="text-xs text-blue-500 mt-1">1 day ago</p>
                                 </div>
                               </div>
                             </>
@@ -939,10 +939,10 @@ const AdminDashboard = () => {
                 {/* Pools Tab */}
                 {activeTab === "pools" && (
                   <div className="space-y-6">
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <Plus className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <Plus className="w-5 h-5 text-blue-500" />
                           Add New Pool
                         </CardTitle>
                       </CardHeader>
@@ -950,7 +950,7 @@ const AdminDashboard = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-4">
                             <div>
-                              <Label htmlFor="stakedToken" className="text-zinc-400">
+                              <Label htmlFor="stakedToken" className="text-blue-400">
                                 Staked Token Address
                               </Label>
                               <Input
@@ -959,11 +959,11 @@ const AdminDashboard = () => {
                                 placeholder="0x..."
                                 value={newPool.stakedToken}
                                 onChange={handleNewPoolChange}
-                                className="bg-zinc-800 border-zinc-700 text-white mt-1 focus:border-orange-500"
+                                className="bg-blue-800 border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                               />
                             </div>
                             <div>
-                              <Label htmlFor="rewardToken" className="text-zinc-400">
+                              <Label htmlFor="rewardToken" className="text-blue-400">
                                 Reward Token Address
                               </Label>
                               <Input
@@ -972,13 +972,13 @@ const AdminDashboard = () => {
                                 placeholder="0x..."
                                 value={newPool.rewardToken}
                                 onChange={handleNewPoolChange}
-                                className="bg-zinc-800 border-zinc-700 text-white mt-1 focus:border-orange-500"
+                                className="bg-blue-800 border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                               />
                             </div>
                           </div>
                           <div className="space-y-4">
                             <div>
-                              <Label htmlFor="APY" className="text-zinc-400">
+                              <Label htmlFor="APY" className="text-blue-400">
                                 APY (%)
                               </Label>
                               <Input
@@ -988,11 +988,11 @@ const AdminDashboard = () => {
                                 placeholder="5"
                                 value={newPool.APY}
                                 onChange={handleNewPoolChange}
-                                className="bg-zinc-800 border-zinc-700 text-white mt-1 focus:border-orange-500"
+                                className="bg-blue-800 border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                               />
                             </div>
                             <div>
-                              <Label htmlFor="lockDays" className="text-zinc-400">
+                              <Label htmlFor="lockDays" className="text-blue-400">
                                 Lock Period (Days)
                               </Label>
                               <Input
@@ -1002,7 +1002,7 @@ const AdminDashboard = () => {
                                 placeholder="30"
                                 value={newPool.lockDays}
                                 onChange={handleNewPoolChange}
-                                className="bg-zinc-800 border-zinc-700 text-white mt-1 focus:border-orange-500"
+                                className="bg-blue-800 border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                               />
                             </div>
                           </div>
@@ -1017,7 +1017,7 @@ const AdminDashboard = () => {
                               !newPool.APY ||
                               !newPool.lockDays
                             }
-                            className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white shadow-lg shadow-orange-500/20 border-0"
+                            className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/20 border-0"
                           >
                             {loading ? (
                               <div className="flex items-center">
@@ -1035,22 +1035,22 @@ const AdminDashboard = () => {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <Layers className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <Layers className="w-5 h-5 text-blue-500" />
                           Existing Pools
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           {pools.length === 0 ? (
-                            <div className="col-span-3 text-center py-8 text-zinc-400">
-                              <Layers className="w-12 h-12 text-zinc-600 mx-auto mb-3" />
+                            <div className="col-span-3 text-center py-8 text-blue-400">
+                              <Layers className="w-12 h-12 text-blue-600 mx-auto mb-3" />
                               <p className="mb-4">No pools created yet. Add your first pool above.</p>
-                              <div className="p-4 bg-zinc-800/50 border border-zinc-700/50 rounded-lg max-w-md mx-auto">
-                                <h4 className="text-sm font-medium text-white mb-2">Quick Guide</h4>
-                                <ol className="text-xs text-zinc-400 list-decimal list-inside space-y-1">
+                              <div className="p-4 bg-blue-800/50 border border-blue-700/50 rounded-lg max-w-md mx-auto">
+                                <h4 className="text-sm font-medium text-blue-900 mb-2">Quick Guide</h4>
+                                <ol className="text-xs text-blue-400 list-decimal list-inside space-y-1">
                                   <li>Enter the staked token contract address</li>
                                   <li>Enter the reward token contract address</li>
                                   <li>Set the APY percentage for stakers</li>
@@ -1067,70 +1067,70 @@ const AdminDashboard = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                               >
-                                <Card className="bg-zinc-800/80 backdrop-blur-sm border-zinc-700/50 overflow-hidden hover:border-orange-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/5">
-                                  <div className="h-2 bg-gradient-to-r from-orange-600 to-orange-400"></div>
+                                <Card className="bg-blue-800/80 backdrop-blur-sm border-blue-700/50 overflow-hidden hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5">
+                                  <div className="h-2 bg-gradient-to-r from-blue-600 to-blue-400"></div>
                                   <CardContent className="p-4">
                                     <div className="flex justify-between items-center mb-3">
-                                      <h4 className="text-lg font-semibold text-white flex items-center gap-2">
-                                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-zinc-700 text-xs">
+                                      <h4 className="text-lg font-semibold text-blue-900 flex items-center gap-2">
+                                        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-700 text-xs">
                                           {pool.id}
                                         </span>
                                         Pool #{pool.id}
                                       </h4>
-                                      <span className="px-2 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs">
+                                      <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs">
                                         {pool.APY}% APY
                                       </span>
                                     </div>
                                     <div className="space-y-2 text-sm">
                                       <div className="flex justify-between">
-                                        <span className="text-zinc-400 flex items-center gap-1">
+                                        <span className="text-blue-400 flex items-center gap-1">
                                           <Shield className="w-3 h-3" /> Staked Token:
                                         </span>
-                                        <span className="text-white">{pool.stakedTokenSymbol}</span>
+                                        <span className="text-blue-900">{pool.stakedTokenSymbol}</span>
                                       </div>
                                       <div className="flex justify-between">
-                                        <span className="text-zinc-400 flex items-center gap-1">
+                                        <span className="text-blue-400 flex items-center gap-1">
                                           <CoinsIcon className="w-3 h-3" /> Reward Token:
                                         </span>
-                                        <span className="text-white">{pool.rewardTokenSymbol}</span>
+                                        <span className="text-blue-900">{pool.rewardTokenSymbol}</span>
                                       </div>
                                       <div className="flex justify-between">
-                                        <span className="text-zinc-400 flex items-center gap-1">
+                                        <span className="text-blue-400 flex items-center gap-1">
                                           <BarChart3 className="w-3 h-3" /> Total Staked:
                                         </span>
-                                        <span className="text-white">
+                                        <span className="text-blue-900">
                                           {pool.totalStaked} {pool.stakedTokenSymbol}
                                         </span>
                                       </div>
                                       <div className="flex justify-between">
-                                        <span className="text-zinc-400 flex items-center gap-1">
+                                        <span className="text-blue-400 flex items-center gap-1">
                                           <CoinsIcon className="w-3 h-3" /> Available Rewards:
                                         </span>
-                                        <span className="text-orange-400">
+                                        <span className="text-blue-400">
                                           {pool.availableRewards} {pool.rewardTokenSymbol}
                                         </span>
                                       </div>
                                       <div className="flex justify-between">
-                                        <span className="text-zinc-400 flex items-center gap-1">
+                                        <span className="text-blue-400 flex items-center gap-1">
                                           <Clock className="w-3 h-3" /> Lock Period:
                                         </span>
-                                        <span className="text-white">{pool.lockDays} days</span>
+                                        <span className="text-blue-900">{pool.lockDays} days</span>
                                       </div>
                                       <div className="flex justify-between">
-                                        <span className="text-zinc-400 flex items-center gap-1">
+                                        <span className="text-blue-400 flex items-center gap-1">
                                           <TrendingUp className="w-3 h-3" /> APY:
                                         </span>
-                                        <span className="text-orange-400">{pool.APY}%</span>
+                                        <span className="text-blue-400">{pool.APY}%</span>
                                       </div>
                                     </div>
-                                    <div className="mt-4 pt-3 border-t border-zinc-700/50">
+                                    <div className="mt-4 pt-3 border-t border-blue-700/50">
                                       <div className="flex justify-between items-center">
-                                        <span className="text-xs text-zinc-500">Contract Address</span>
+                                        <span className="text-xs text-blue-500">Contract Address</span>
                                         <a
                                           href={`https://scan.test2.btcs.network/address/${pool.stakedToken}`}
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                          className="text-xs text-orange-400 hover:text-orange-300 flex items-center"
+                                          className="text-xs text-blue-400 hover:text-blue-300 flex items-center"
                                         >
                                           View <ExternalLink className="w-3 h-3 ml-1" />
                                         </a>
@@ -1150,17 +1150,17 @@ const AdminDashboard = () => {
                 {/* Rewards Tab */}
                 {activeTab === "rewards" && (
                   <div className="space-y-6">
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <CoinsIcon className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <CoinsIcon className="w-5 h-5 text-blue-500" />
                           Deposit Rewards
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <Label htmlFor="poolId" className="text-zinc-400">
+                            <Label htmlFor="poolId" className="text-blue-400">
                               Select Pool
                             </Label>
                             <select
@@ -1168,7 +1168,7 @@ const AdminDashboard = () => {
                               name="poolId"
                               value={rewardDeposit.poolId}
                               onChange={handleRewardDepositChange}
-                              className="w-full p-2 rounded-md bg-zinc-800 border border-zinc-700 text-white mt-1 focus:border-orange-500"
+                              className="w-full p-2 rounded-md bg-blue-800 border border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                             >
                               {pools.length === 0 ? (
                                 <option value="0">No pools available</option>
@@ -1182,7 +1182,7 @@ const AdminDashboard = () => {
                             </select>
                           </div>
                           <div>
-                            <Label htmlFor="amount" className="text-zinc-400">
+                            <Label htmlFor="amount" className="text-blue-400">
                               Amount
                             </Label>
                             <Input
@@ -1192,7 +1192,7 @@ const AdminDashboard = () => {
                               placeholder="Amount to deposit"
                               value={rewardDeposit.amount}
                               onChange={handleRewardDepositChange}
-                              className="bg-zinc-800 border-zinc-700 text-white mt-1 focus:border-orange-500"
+                              className="bg-blue-800 border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                             />
                           </div>
                         </div>
@@ -1200,7 +1200,7 @@ const AdminDashboard = () => {
                           <Button
                             onClick={handleDepositRewards}
                             disabled={loading || !rewardDeposit.amount || pools.length === 0}
-                            className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white shadow-lg shadow-orange-500/20 border-0"
+                            className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/20 border-0"
                           >
                             {loading ? (
                               <div className="flex items-center">
@@ -1218,10 +1218,10 @@ const AdminDashboard = () => {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <BarChart3 className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <BarChart3 className="w-5 h-5 text-blue-500" />
                           Rewards Overview
                         </CardTitle>
                       </CardHeader>
@@ -1229,25 +1229,25 @@ const AdminDashboard = () => {
                         <div className="overflow-x-auto">
                           <table className="w-full">
                             <thead>
-                              <tr className="border-b border-zinc-800">
-                                <th className="text-left py-3 px-4 text-zinc-400 font-medium">Pool ID</th>
-                                <th className="text-left py-3 px-4 text-zinc-400 font-medium">Reward Token</th>
-                                <th className="text-right py-3 px-4 text-zinc-400 font-medium">Available Rewards</th>
-                                <th className="text-right py-3 px-4 text-zinc-400 font-medium">APY</th>
-                                <th className="text-center py-3 px-4 text-zinc-400 font-medium">Status</th>
+                              <tr className="border-b border-blue-200">
+                                <th className="text-left py-3 px-4 text-blue-400 font-medium">Pool ID</th>
+                                <th className="text-left py-3 px-4 text-blue-400 font-medium">Reward Token</th>
+                                <th className="text-right py-3 px-4 text-blue-400 font-medium">Available Rewards</th>
+                                <th className="text-right py-3 px-4 text-blue-400 font-medium">APY</th>
+                                <th className="text-center py-3 px-4 text-blue-400 font-medium">Status</th>
                               </tr>
                             </thead>
                             <tbody>
                               {pools.length === 0 ? (
                                 <tr>
-                                  <td colSpan={5} className="text-center py-8 text-zinc-400">
+                                  <td colSpan={5} className="text-center py-8 text-blue-400">
                                     <div className="flex flex-col items-center">
-                                      <CoinsIcon className="w-10 h-10 text-zinc-600 mb-2" />
+                                      <CoinsIcon className="w-10 h-10 text-blue-600 mb-2" />
                                       No pools created yet.
                                       <Button
                                         variant="link"
                                         onClick={() => setActiveTab("pools")}
-                                        className="text-orange-400 hover:text-orange-300 mt-2"
+                                        className="text-blue-400 hover:text-blue-300 mt-2"
                                       >
                                         Create your first pool
                                       </Button>
@@ -1256,26 +1256,26 @@ const AdminDashboard = () => {
                                 </tr>
                               ) : (
                                 pools.map((pool) => (
-                                  <tr key={pool.id} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                                  <tr key={pool.id} className="border-b border-blue-200/50 hover:bg-blue-50/30">
                                     <td className="py-3 px-4">
-                                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-800 text-white">
+                                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-800 text-blue-900">
                                         {pool.id}
                                       </span>
                                     </td>
                                     <td className="py-3 px-4">
                                       <div className="flex items-center">
-                                        <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center mr-2">
-                                          <span className="text-xs text-orange-400">
+                                        <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                                          <span className="text-xs text-blue-400">
                                             {pool.rewardTokenSymbol.charAt(0)}
                                           </span>
                                         </div>
                                         {pool.rewardTokenSymbol}
                                       </div>
                                     </td>
-                                    <td className="py-3 px-4 text-right text-orange-400">
+                                    <td className="py-3 px-4 text-right text-blue-400">
                                       {pool.availableRewards} {pool.rewardTokenSymbol}
                                     </td>
-                                    <td className="py-3 px-4 text-right text-orange-400">{pool.APY}%</td>
+                                    <td className="py-3 px-4 text-right text-blue-400">{pool.APY}%</td>
                                     <td className="py-3 px-4 text-center">
                                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-400">
                                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 mr-1"></span>
@@ -1292,17 +1292,17 @@ const AdminDashboard = () => {
                     </Card>
 
                     {/* Rewards Distribution Chart */}
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <BarChart3 className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <BarChart3 className="w-5 h-5 text-blue-500" />
                           Rewards Distribution
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         {pools.length === 0 ? (
-                          <div className="text-center py-8 text-zinc-400">
-                            <BarChart3 className="w-10 h-10 text-zinc-600 mx-auto mb-2" />
+                          <div className="text-center py-8 text-blue-400">
+                            <BarChart3 className="w-10 h-10 text-blue-600 mx-auto mb-2" />
                             No data to display
                           </div>
                         ) : (
@@ -1312,13 +1312,13 @@ const AdminDashboard = () => {
                                 const height = `${Math.max(5, (Number.parseFloat(pool.availableRewards) / Number.parseFloat(totalRewards || 1)) * 100)}%`
                                 return (
                                   <div key={pool.id} className="flex-1 flex flex-col items-center">
-                                    <div className="w-full bg-zinc-800 rounded-t-sm relative group" style={{ height }}>
-                                      <div className="absolute inset-0 bg-gradient-to-t from-orange-600 to-orange-400 opacity-70 rounded-t-sm"></div>
-                                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-zinc-800 px-2 py-1 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    <div className="w-full bg-blue-800 rounded-t-sm relative group" style={{ height }}>
+                                      <div className="absolute inset-0 bg-gradient-to-t from-blue-600 to-blue-400 opacity-70 rounded-t-sm"></div>
+                                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-blue-800 px-2 py-1 rounded text-xs text-blue-900 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                                         {pool.availableRewards} {pool.rewardTokenSymbol}
                                       </div>
                                     </div>
-                                    <div className="text-xs text-zinc-400 mt-2">Pool #{pool.id}</div>
+                                    <div className="text-xs text-blue-400 mt-2">Pool #{pool.id}</div>
                                   </div>
                                 )
                               })}
@@ -1333,17 +1333,17 @@ const AdminDashboard = () => {
                 {/* Settings Tab */}
                 {activeTab === "settings" && (
                   <div className="space-y-6">
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <UserPlus className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <UserPlus className="w-5 h-5 text-blue-500" />
                           Transfer Ownership
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
                           <div>
-                            <Label htmlFor="newOwner" className="text-zinc-400">
+                            <Label htmlFor="newOwner" className="text-blue-400">
                               New Owner Address
                             </Label>
                             <Input
@@ -1352,15 +1352,15 @@ const AdminDashboard = () => {
                               placeholder="0x..."
                               value={newOwner}
                               onChange={handleNewOwnerChange}
-                              className="bg-zinc-800 border-zinc-700 text-white mt-1 focus:border-orange-500"
+                              className="bg-blue-800 border-blue-700 text-blue-900 mt-1 focus:border-blue-500"
                             />
                           </div>
-                          <div className="p-4 bg-orange-950/30 border border-orange-800/30 rounded-md">
+                          <div className="p-4 bg-blue-950/30 border border-blue-800/30 rounded-md">
                             <div className="flex items-start gap-3">
-                              <AlertCircle className="w-5 h-5 text-orange-400 mt-0.5" />
+                              <AlertCircle className="w-5 h-5 text-blue-400 mt-0.5" />
                               <div>
-                                <h4 className="text-sm font-medium text-orange-400">Warning</h4>
-                                <p className="text-xs text-orange-300/80 mt-1">
+                                <h4 className="text-sm font-medium text-blue-400">Warning</h4>
+                                <p className="text-xs text-blue-300/80 mt-1">
                                   Transferring ownership will permanently remove your admin access to this contract.
                                   This action cannot be undone.
                                 </p>
@@ -1372,7 +1372,7 @@ const AdminDashboard = () => {
                           <Button
                             onClick={handleTransferOwnership}
                             disabled={loading || !newOwner}
-                            className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white shadow-lg shadow-orange-500/20 border-0"
+                            className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-lg shadow-blue-500/20 border-0"
                           >
                             {loading ? (
                               <div className="flex items-center">
@@ -1390,25 +1390,25 @@ const AdminDashboard = () => {
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <Settings className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <Settings className="w-5 h-5 text-blue-500" />
                           Contract Information
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-3">
                           <div className="flex flex-col">
-                            <span className="text-zinc-400 text-sm">Contract Address</span>
+                            <span className="text-blue-400 text-sm">Contract Address</span>
                             <div className="flex items-center mt-1">
-                              <span className="text-white font-mono bg-zinc-800 p-2 rounded-md text-sm flex-1 truncate">
+                              <span className="text-blue-900 font-mono bg-blue-800 p-2 rounded-md text-sm flex-1 truncate">
                                 {CONTRACT_ADDRESS}
                               </span>
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className="ml-2 text-zinc-400 hover:text-orange-400"
+                                className="ml-2 text-blue-400 hover:text-blue-600"
                                 onClick={() => {
                                   navigator.clipboard.writeText(CONTRACT_ADDRESS)
                                   setMessage({ type: "success", text: "Contract address copied to clipboard" })
@@ -1420,15 +1420,15 @@ const AdminDashboard = () => {
                             </div>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-zinc-400 text-sm">Owner Address</span>
+                            <span className="text-blue-400 text-sm">Owner Address</span>
                             <div className="flex items-center mt-1">
-                              <span className="text-white font-mono bg-zinc-800 p-2 rounded-md text-sm flex-1 truncate">
+                              <span className="text-blue-900 font-mono bg-blue-800 p-2 rounded-md text-sm flex-1 truncate">
                                 {account}
                               </span>
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className="ml-2 text-zinc-400 hover:text-orange-400"
+                                className="ml-2 text-blue-400 hover:text-blue-600"
                                 onClick={() => {
                                   navigator.clipboard.writeText(account)
                                   setMessage({ type: "success", text: "Owner address copied to clipboard" })
@@ -1440,8 +1440,8 @@ const AdminDashboard = () => {
                             </div>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-zinc-400 text-sm">Total Pools</span>
-                            <span className="text-white font-mono bg-zinc-800 p-2 rounded-md mt-1 text-sm">
+                            <span className="text-blue-400 text-sm">Total Pools</span>
+                            <span className="text-blue-900 font-mono bg-blue-800 p-2 rounded-md mt-1 text-sm">
                               {pools.length}
                             </span>
                           </div>
@@ -1450,67 +1450,67 @@ const AdminDashboard = () => {
                     </Card>
 
                     {/* Security Settings */}
-                    <Card className="bg-zinc-900/80 backdrop-blur-sm border-zinc-800 hover:border-orange-500/30 transition-colors duration-300">
+                    <Card className="bg-blue-50/80 backdrop-blur-sm border-blue-200 hover:border-blue-500/30 transition-colors duration-300">
                       <CardHeader>
-                        <CardTitle className="text-xl text-white flex items-center gap-2">
-                          <Shield className="w-5 h-5 text-orange-500" />
+                        <CardTitle className="text-xl text-blue-900 flex items-center gap-2">
+                          <Shield className="w-5 h-5 text-blue-500" />
                           Security Settings
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          <div className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
+                          <div className="flex items-center justify-between p-3 rounded-lg bg-blue-800/50 border border-blue-700/50">
                             <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                                <Shield className="w-5 h-5 text-orange-400" />
+                              <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                <Shield className="w-5 h-5 text-blue-400" />
                               </div>
                               <div>
-                                <h4 className="text-sm font-medium text-white">Emergency Pause</h4>
-                                <p className="text-xs text-zinc-400 mt-1">Temporarily pause all staking operations</p>
+                                <h4 className="text-sm font-medium text-blue-900">Emergency Pause</h4>
+                                <p className="text-xs text-blue-400 mt-1">Temporarily pause all staking operations</p>
                               </div>
                             </div>
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-zinc-700 hover:border-orange-500 hover:text-orange-400"
+                              className="border-blue-700 hover:border-blue-500 hover:text-blue-400"
                             >
                               Pause
                             </Button>
                           </div>
 
-                          <div className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
+                          <div className="flex items-center justify-between p-3 rounded-lg bg-blue-800/50 border border-blue-700/50">
                             <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                                <RefreshCw className="w-5 h-5 text-orange-400" />
+                              <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                <RefreshCw className="w-5 h-5 text-blue-400" />
                               </div>
                               <div>
-                                <h4 className="text-sm font-medium text-white">Update APY</h4>
-                                <p className="text-xs text-zinc-400 mt-1">Modify APY rates for all pools</p>
+                                <h4 className="text-sm font-medium text-blue-900">Update APY</h4>
+                                <p className="text-xs text-blue-400 mt-1">Modify APY rates for all pools</p>
                               </div>
                             </div>
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-zinc-700 hover:border-orange-500 hover:text-orange-400"
+                              className="border-blue-700 hover:border-blue-500 hover:text-blue-400"
                             >
                               Update
                             </Button>
                           </div>
 
-                          <div className="flex items-center justify-between p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50">
+                          <div className="flex items-center justify-between p-3 rounded-lg bg-blue-800/50 border border-blue-700/50">
                             <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                                <Clock className="w-5 h-5 text-orange-400" />
+                              <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                <Clock className="w-5 h-5 text-blue-400" />
                               </div>
                               <div>
-                                <h4 className="text-sm font-medium text-white">Modify Lock Periods</h4>
-                                <p className="text-xs text-zinc-400 mt-1">Change staking lock periods</p>
+                                <h4 className="text-sm font-medium text-blue-900">Modify Lock Periods</h4>
+                                <p className="text-xs text-blue-400 mt-1">Change staking lock periods</p>
                               </div>
                             </div>
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-zinc-700 hover:border-orange-500 hover:text-orange-400"
+                              className="border-blue-700 hover:border-blue-500 hover:text-blue-400"
                             >
                               Modify
                             </Button>

@@ -6,9 +6,9 @@ declare global {
     }
 }
 
-// 0x53c66a0BBF32D8f1b1C40682cba8e25bE548E0da
-// TSI : 0x1D218F86DB2a37986Dc797CE749f76c5696a88EC
-export const CONTRACT_ADDRESS: string = "0x6a660f331808790553fE83dC242Bc41eC8E73601";
+// PST: 0xa7AD1C1eE9b701591B68701ad5893941F156053d
+// TSI : 0x4f9fE99d666381a045b9F3690104a61cdC5c1bbe
+export const CONTRACT_ADDRESS: string = "0x3aFC898c5052DaEE15c7c4Fe0361761A11ff8d4E";
 
 
 export enum TabType {
@@ -23,7 +23,7 @@ export const REFRESH_INTERVAL = 30000;
 export const CORE_TESTNET_CHAIN_ID = "0xc352";
 export const CORE_TESTNET_PARAMS = {
   chainId: CORE_TESTNET_CHAIN_ID,
-  chainName: 'Core Testnet',
+  chainName: 'Pharos Devnet',
   nativeCurrency: {
     name: 'Pharos',
     symbol: 'DPLS',

@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 import { HeroScrollDemo } from "@/components/HeroScroll";
 import FloatingNavDemo from "@/components/Navbar";
 import Typeform from "@/components/Typeform";
-import { FeaturesSection } from "@/components/VoFeatures";
+import BlockchainMetrics from "@/components/ui/blockchainMetrics";
+import FeaturesSection  from "@/components/VoFeatures";
 import Lenis from "lenis";
 import { useEffect } from "react";
 
@@ -26,15 +27,15 @@ function raf(time: any) {
 requestAnimationFrame(raf);
   },  []);
   return (
-    <div className="min-h-screen bg-[linear-gradient(135deg,_white,_#A7C7E7)]">
+    <div className="min-h-screen bg-blue-700">
 
 
       <FloatingNavDemo />
       <HeroScrollDemo />
-      <CoreStrengths />
+      <BlockchainMetrics />
       <FeaturesSection />
       {/* <Features/> */}
-      <Typeform />
+      
       <Footer />
     </div>
   );

@@ -1,11 +1,12 @@
 "use client"
+
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import Image from "next/image"
 import type { JSX } from "react/jsx-runtime"
 import { useCoroTashi } from "@/context/CoroTashiContext"
-import { useRouter } from "next/navigation" // Import useRouter
+import { useRouter } from "next/navigation"
 
 export const FloatingNav = ({
   navItems,
@@ -19,17 +20,16 @@ export const FloatingNav = ({
   }[]
   className?: string
 }) => {
-
-  const { account } = useCoroTashi();
-  const router = useRouter(); // Initialize router
+  const { account } = useCoroTashi()
+  const router = useRouter()
 
   const handleStakeClick = () => {
     if (account === "0x745040302062fBae5F3F68646CF683f75230bE80") {
-      router.push("/admin");
+      router.push("/admin")
     } else {
-      router.push("/dashboard");
+      router.push("/dashboard")
     }
-  };
+  }
 
   return (
     <motion.div
@@ -37,24 +37,18 @@ export const FloatingNav = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={cn(
-        "flex max-w-fit fixed top-6 inset-x-0 mx-auto border border-white/[0.1] rounded-full bg-black/80 backdrop-blur-md shadow-[0_0_15px_rgba(249,115,22,0.2)] z-[5000] pr-2 pl-6 py-2 items-center justify-center space-x-4",
+        "flex max-w-fit fixed top-6 inset-x-0 mx-auto border border-gray-200 rounded-full bg-white/90 backdrop-blur-md shadow-[0_0_15px_rgba(36,50,197,0.2)] z-[5000] pr-2 pl-6 py-2 items-center justify-center space-x-4",
         className,
       )}
     >
       {/* Logo on the left */}
       <Link href="/" className="flex items-center mr-2">
         <div className="relative w-8 h-8 mr-2">
-          <Image
-            src="/image.png"
-            width={40}
-            height={40}
-            alt="Core Logo"
-            className="rounded-full bg-orange-500/20"
-          />
-          <div className="absolute inset-0 rounded-full border border-orange-500/30 animate-pulse"></div>
+          <Image src="/image.png" width={40} height={40} alt="Core Logo" className="rounded-full bg-[#2432C5]/20" />
+          <div className="absolute inset-0 rounded-full border border-[#2432C5]/30 animate-pulse"></div>
         </div>
-        <span className="font-bold text-white text-sm hidden sm:inline-block">
-          CORO <span className="text-orange-500">TASHI</span>
+        <span className="font-bold text-gray-800 text-sm hidden sm:inline-block">
+          PHARO <span className="text-[#2432C5]">TASHI</span>
         </span>
       </Link>
 
@@ -63,7 +57,7 @@ export const FloatingNav = ({
           key={`link-${idx}`}
           href={navItem.link || "#"}
           target="_blank"
-          className="relative text-neutral-300 items-center flex space-x-1 hover:text-orange-300 transition-colors duration-200 px-2 py-1 text-sm"
+          className="relative text-gray-600 items-center flex space-x-1 hover:text-[#2432C5] transition-colors duration-200 px-2 py-1 text-sm"
         >
           <span className="block sm:hidden">{navItem.icon}</span>
           <span className="hidden sm:block">{navItem.name}</span>
@@ -71,11 +65,11 @@ export const FloatingNav = ({
       ))}
 
       <button
-        onClick={handleStakeClick} // Add click handler
-        className="relative inline-flex h-9 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-black group"
+        onClick={handleStakeClick}
+        className="relative inline-flex h-9 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#2432C5] focus:ring-offset-2 focus:ring-offset-white group"
       >
-        <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#f97316_0%,#000000_50%,#f97316_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-5 py-1 text-sm font-medium text-white backdrop-blur-3xl relative group-hover:bg-black/80 transition-colors duration-200">
+        <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#2432C5_0%,#ffffff_50%,#2432C5_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white px-5 py-1 text-sm font-medium text-gray-800 backdrop-blur-3xl relative group-hover:bg-gray-50 transition-colors duration-200">
           <span className="mr-1">Stake</span>
           <svg
             width="16"
@@ -93,7 +87,7 @@ export const FloatingNav = ({
               strokeLinejoin="round"
             />
           </svg>
-          <span className="absolute inset-x-0 w-2/3 mx-auto -bottom-px bg-gradient-to-r from-transparent via-orange-500 to-transparent h-px" />
+          <span className="absolute inset-x-0 w-2/3 mx-auto -bottom-px bg-gradient-to-r from-transparent via-[#2432C5] to-transparent h-px" />
         </span>
       </button>
     </motion.div>
