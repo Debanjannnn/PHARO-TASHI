@@ -65,9 +65,8 @@ npm run dev
 - **Chain ID**: `1114 (0x45A)`
 - **Symbol**: `PTT`
 
-### Contract Addresses
-- **TPHAROS**: [0xF8Bdce16c4c5Bd375a2e9F79F007c95080FC3c2D](https://scan.test2.btcs.network/address/0xF8Bdce16c4c5Bd375a2e9F79F007c95080FC3c2D)
-- **REWARD TOKEN**: [0x83A49FF8f630d45D4C3b61DEE6D72B01599C0a85](https://scan.test2.btcs.network/address/0x83A49FF8f630d45D4C3b61DEE6D72B01599C0a85)
+### Contract Addresse
+https://pharosscan.xyz/address/0x3aFC898c5052DaEE15c7c4Fe0361761A11ff8d4E
 
 ## How It Works
 
