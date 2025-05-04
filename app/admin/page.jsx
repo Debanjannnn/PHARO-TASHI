@@ -125,6 +125,7 @@ const AdminDashboard = () => {
       for (let i = 0; i < count; i++) {
         // Get all pool info fields from contract
         const pool = await contract.poolInfo(i)
+        console.log("POOL------->", pool)
         const [
           stakedToken, 
           rewardToken, 
@@ -167,7 +168,7 @@ const AdminDashboard = () => {
           rewardTokenSymbol,
           totalStaked: ethers.formatEther(totalStakedBN),
           APY: APY.toString(),
-          // lockDays: lockDays.toString(),
+          lockDays: lockDays.toString(),
           // Use totalRewards from poolInfo instead of token balance
           availableRewards: (ethers.formatEther(totalRewardsBN)),
         })

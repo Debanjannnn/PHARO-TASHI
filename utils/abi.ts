@@ -63,6 +63,12 @@ const abi = {
 						"internalType": "uint256",
 						"name": "reward",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
 					}
 				],
 				"name": "Claimed",
@@ -91,6 +97,37 @@ const abi = {
 					}
 				],
 				"name": "Deposited",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "penalty",
+						"type": "uint256"
+					}
+				],
+				"name": "EmergencyWithdrawn",
 				"type": "event"
 			},
 			{
@@ -167,6 +204,31 @@ const abi = {
 				"inputs": [
 					{
 						"indexed": true,
+						"internalType": "uint256",
+						"name": "pid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "depositor",
+						"type": "address"
+					}
+				],
+				"name": "RewardDeposited",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
 						"internalType": "address",
 						"name": "user",
 						"type": "address"
@@ -181,6 +243,12 @@ const abi = {
 						"indexed": false,
 						"internalType": "uint256",
 						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
 						"type": "uint256"
 					}
 				],
@@ -202,7 +270,46 @@ const abi = {
 			},
 			{
 				"inputs": [],
-				"name": "TEST_LOCK_PERIOD",
+				"name": "EMERGENCY_PENALTY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "FEE_PERCENT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_MULTIPLIER",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TEST_DAY",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -265,14 +372,9 @@ const abi = {
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_message",
-						"type": "string"
 					}
 				],
-				"name": "createNotification",
+				"name": "deposit",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -290,7 +392,20 @@ const abi = {
 						"type": "uint256"
 					}
 				],
-				"name": "deposit",
+				"name": "depositRewards",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pid",
+						"type": "uint256"
+					}
+				],
+				"name": "emergencyWithdraw",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -327,30 +442,12 @@ const abi = {
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct CoroYami.Notification[]",
+						"internalType": "struct PharoTashi.Notification[]",
 						"name": "",
 						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_pid",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_newAPY",
-						"type": "uint256"
-					}
-				],
-				"name": "modifyPool",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -469,6 +566,11 @@ const abi = {
 					},
 					{
 						"internalType": "uint256",
+						"name": "totalRewards",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
 						"name": "APY",
 						"type": "uint256"
 					},
@@ -484,29 +586,6 @@ const abi = {
 			{
 				"inputs": [],
 				"name": "renounceOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_pid",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_to",
-						"type": "address"
-					}
-				],
-				"name": "swap",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -583,6 +662,7 @@ const abi = {
 			}
 		],
 		"devdoc": {
+			"details": "A staking contract that allows users to stake tokens and earn rewards with configurable APY and lock periods.",
 			"errors": {
 				"OwnableInvalidOwner(address)": [
 					{
@@ -602,16 +682,78 @@ const abi = {
 			},
 			"kind": "dev",
 			"methods": {
+				"addPool(address,address,uint256,uint256)": {
+					"details": "Add a new staking pool",
+					"params": {
+						"_APY": "Annual Percentage Yield for the pool",
+						"_lockDays": "Number of days tokens are locked",
+						"_rewardToken": "Address of the token to be given as reward",
+						"_stakedToken": "Address of the token to be staked"
+					}
+				},
+				"claimReward(uint256)": {
+					"details": "Claim pending rewards from a pool",
+					"params": {
+						"_pid": "Pool ID"
+					}
+				},
+				"constructor": {
+					"details": "Constructor initializes the contract with the deployer as the owner"
+				},
+				"deposit(uint256,uint256)": {
+					"details": "Deposit tokens to stake in a pool",
+					"params": {
+						"_amount": "Amount of tokens to stake",
+						"_pid": "Pool ID"
+					}
+				},
+				"depositRewards(uint256,uint256)": {
+					"details": "Deposit rewards to a pool",
+					"params": {
+						"_amount": "Amount of reward tokens to deposit",
+						"_pid": "Pool ID"
+					}
+				},
+				"emergencyWithdraw(uint256)": {
+					"details": "Emergency withdraw staked tokens with penalty",
+					"params": {
+						"_pid": "Pool ID"
+					}
+				},
+				"getNotifications()": {
+					"details": "Get all notifications",
+					"returns": {
+						"_0": "Array of all notifications"
+					}
+				},
 				"owner()": {
 					"details": "Returns the address of the current owner."
+				},
+				"pendingReward(uint256,address)": {
+					"details": "Calculate pending reward for a user in a pool",
+					"params": {
+						"_pid": "Pool ID",
+						"_user": "User address"
+					},
+					"returns": {
+						"_0": "Pending reward amount"
+					}
 				},
 				"renounceOwnership()": {
 					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
 				},
 				"transferOwnership(address)": {
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"withdraw(uint256,uint256)": {
+					"details": "Withdraw staked tokens from a pool",
+					"params": {
+						"_amount": "Amount of tokens to withdraw",
+						"_pid": "Pool ID"
+					}
 				}
 			},
+			"title": "CoroTashi",
 			"version": 1
 		},
 		"userdoc": {
@@ -622,7 +764,7 @@ const abi = {
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/PharoTashi.sol": "CoroYami"
+			"contracts/PharoTashi.sol": "PharoTashi"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -709,11 +851,11 @@ const abi = {
 			]
 		},
 		"contracts/PharoTashi.sol": {
-			"keccak256": "0xda8e5efed88d91e55f36086294f1cd5b5a7f06299fbf822955c8b70c61eb4d31",
+			"keccak256": "0x01f3b56ff76f2844435edb52d289dc4081f1c185cc185ed1e5ecdf91698eb9df",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1deb06644c32a33910da6494149fea97663b1150d870320acbc9dedbda5b4ec2",
-				"dweb:/ipfs/QmXXdNgQDiwqana64qoZnbkxh3NCUwG1SrTMXj9dxQNWAL"
+				"bzz-raw://b4b302a83294834f3f9e93fdbea298f795510a10c7d020eb192899a1166586ea",
+				"dweb:/ipfs/QmeYVER5ZHWqjeUApDuZoXhTpHHr1GtS26XGYAdm8DVwR3"
 			]
 		}
 	},
