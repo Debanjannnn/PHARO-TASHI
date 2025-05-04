@@ -734,7 +734,7 @@ const AdminDashboard = () => {
                             <div className="flex items-center justify-between">
                               <div>
                                 <p className="text-sm text-blue-400">Total Staked</p>
-                                <h3 className="text-3xl font-bold text-blue-900 mt-1">{totalStaked} TBTC <small className="font-thin text-sm"> (wBTC)</small></h3>
+                                <h3 className="text-3xl font-bold text-blue-900 mt-1">{totalStaked} PST </h3>
                               </div>
                               <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
                                 <BarChart3 className="w-6 h-6 text-blue-500" />

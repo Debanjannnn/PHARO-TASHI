@@ -23,7 +23,7 @@ export const REFRESH_INTERVAL = 30000;
 export const CORE_TESTNET_CHAIN_ID = "0xc352";
 export const CORE_TESTNET_PARAMS = {
   chainId: CORE_TESTNET_CHAIN_ID,
-  chainName: 'Pharos Devnet',
+  chainName: 'Pharos',
   nativeCurrency: {
     name: 'Pharos',
     symbol: 'DPLS',
