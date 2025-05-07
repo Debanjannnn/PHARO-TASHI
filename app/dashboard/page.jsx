@@ -743,7 +743,7 @@ const UserDashboard = () => {
               </svg>
               <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-xl -z-10"></div>
             </div>
-            <h2 className="text-3xl font-bold mb-3">Welcome to CORO TASHI</h2>
+            <h2 className="text-3xl font-bold mb-3">Welcome to PHARO TASHI</h2>
             <p className="text-zinc-400 mb-8 max-w-md mx-auto">
               Connect your wallet to view your staking positions, deposit tokens, and claim rewards.
             </p>
